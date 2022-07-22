@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="image_actions">
+        <item>Open the picture in the background</item>
+        <item>Open image in new tab</item>
+    </string-array>
+
+    <string-array name="image_anchor_actions">
+        <item>Open the picture in the background</item>
+        <item>Open image in new tab</item>
+        <item>Open link in background</item>
+        <item>Open link in new tab</item>
+    </string-array>
+
+    <string-array name="url_actions">
+        <item>Open link in background</item>
+        <item>Open link in new tab</item>
+    </string-array>
+</resources>

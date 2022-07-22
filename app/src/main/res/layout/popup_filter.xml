@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_filter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardElevation="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:text="@string/select_type_you_want_to_show"
+            android:textColor="#000"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintEnd_toEndOf="@+id/ct_excel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ct_word"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/ripple_bg_white"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+            <CheckBox
+                android:id="@+id/cb_word"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="8dp"
+                android:buttonTint="@color/blue"
+                android:contentDescription="@string/rate_us"
+                android:padding="@dimen/_16sdp"
+                android:text="@string/word"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ct_pdf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_bg_white"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ct_word">
+
+            <CheckBox
+                android:id="@+id/cb_pdf"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="8dp"
+                android:buttonTint="@color/blue"
+                android:padding="@dimen/_16sdp"
+                android:text="@string/pdf"
+                android:textColor="#000"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ct_excel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_bg_white"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ct_pdf">
+
+            <CheckBox
+                android:id="@+id/cb_excel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="8dp"
+                android:buttonTint="@color/blue"
+                android:padding="@dimen/_16sdp"
+                android:text="@string/excel"
+                android:textColor="#000"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ct_ppt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_bg_white"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/materialDivider3">
+
+            <CheckBox
+                android:id="@+id/cb_slide"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="8dp"
+                android:buttonTint="@color/blue"
+                android:padding="@dimen/_16sdp"
+                android:text="@string/slide"
+                android:textColor="#000000"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ct_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_bg_white"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ct_ppt">
+
+            <CheckBox
+                android:id="@+id/cb_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="8dp"
+                android:buttonTint="@color/blue"
+                android:padding="@dimen/_16sdp"
+                android:text="@string/txt"
+                android:textColor="#000000"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:elevation="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/ct_word"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ct_word" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:elevation="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ct_pdf" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:elevation="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/ct_excel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:elevation="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/ct_ppt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

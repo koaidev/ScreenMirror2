@@ -1,0 +1,95 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Screen Mirroring</string>
+    <string name="tab_text_1">All</string>
+    <string name="tab_text_2">Videos</string>
+    <string name="tab_text_3">Images</string>
+
+    <string name="quick_and_convenient_screen_sharing">Quick and convenient screen sharing</string>
+    <string name="video_and_photo">Video and photo</string>
+    <string name="media">Media</string>
+    <string name="mirror_screen_to_tv">Mirror screen to TV</string>
+    <string name="web">Web</string>
+    <string name="web_browser">Web browser</string>
+    <string name="guide">Guide</string>
+    <string name="how_to_connect">How to connect?</string>
+    <string name="document">Document</string>
+    <string name="read_file">Read file</string>
+    <string name="rate_us">Rate us</string>
+    <string name="share">Share</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="title_activity_media">Media</string>
+    <string name="setting">Setting</string>
+    <string name="wifi_connected">Đã kết nối WiFi</string>
+    <string name="title_activity_document">Document</string>
+    <string name="word">Word</string>
+    <string name="pdf">PDF</string>
+    <string name="excel">Excel</string>
+    <string name="select_type_you_want_to_show">Select type you want to show.</string>
+    <string name="slide">Slide</string>
+    <string name="txt">TXT</string>
+    <string name="tutorial">tutorial</string>
+    <string name="your_device_is_not_supported_for_screen_mirroring_please_try_on_other_device">Your device is not supported for screen mirroring. Please try on other device.</string>
+    <string name="ok">OK</string>
+    <string name="oops">Oops!</string>
+    <string name="do_you_want_to_delete_all_nbrowser_history">Do you want to delete all?\nbrowser history?</string>
+    <string name="delete_history">Delete History</string>
+    <string name="back">Back</string>
+    <string name="hint_search">Search…</string>
+    <string name="adFiltersLastUpdated">adFiltersLasUpdated</string>
+
+    <string-array name="blocked_sites">
+        <item>youtube.com</item>
+        <item>00000nwebcamnow.com</item>
+        <item>0000114.com</item>
+        <item>0001casino.com</item>
+        <item>0005.us</item>
+        <item>000babes.com</item>
+        <item>000dvd.com</item>
+        <item>000freehosting.com</item>
+        <item>000go.com</item>
+        <item>000porn.com</item>
+        <item>000pussy69pornxxxporno.com</item>
+        <item>000relationships.com</item>
+        <item> 000-sex.com</item>
+        <item>000sexe.com</item>
+        <item>000webhostapp.com</item>
+        <item> 00101001.com</item>
+        <item>0011cartoons.com</item>
+        <item> 001-adult-toys-n-sex-dolls.com</item>
+        <item> 001am.com</item>
+        <item>001londonescorts.com</item>
+        <item> 001porno.com</item>
+        <item>001xx.com</item>
+        <item>001xxx.com</item>
+        <item>00-44.com</item>
+        <item>003689.com</item>
+    </string-array>
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="intersititial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner">ca-app-pub-3940256099942544/6300978111</string>
+
+
+    <string name="vibrateON" tools:ignore="ExtraTranslation">vibrateOn</string>
+    <string name="soundON" tools:ignore="ExtraTranslation">soundOn</string>
+    <string name="adBlockON" tools:ignore="ExtraTranslation">adBlockOn</string>
+    <string name="policyAccept" tools:ignore="ExtraTranslation">policyAccept</string>
+    <string name="shortcut">Shortcut</string>
+    <string name="edit"><u>Edit</u></string>
+    <string name="add_more">Thêm mới</string>
+    <string name="placeholder_url">https://www.google.com</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_tab_welcome">new tab welcome</string>
+
+    <string name="start">Start</string>
+    <string name="no_picture_mode">no image mode</string>
+    <string name="history">history</string>
+    <string name="settings">settings</string>
+    <string name="quit">quit</string>
+
+    <string name="search_or_type_url">search or type url</string>
+
+    <string name="warn_invalid_url">warn invalid url</string>
+    <string name="placeholder_todo">todo</string>
+
+</resources>
