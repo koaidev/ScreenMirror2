@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
             android:gravity="center_vertical"
-            android:text="4 File"
+            android:text="0 File"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,7 +90,7 @@
             android:id="@+id/txt_number_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="65.40 MB"
+            android:text="0 MB"
             android:textColor="#3AC56A"
             app:layout_constraintBottom_toTopOf="@+id/rcv_document"
             app:layout_constraintEnd_toEndOf="parent"

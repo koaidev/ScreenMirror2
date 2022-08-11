@@ -76,7 +76,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckWord.observe(this) {
             if (it) {
-                documentViewModel.getAllWords(application.contentResolver)
+//                documentViewModel.getAllWords(application.contentResolver)
             }
         }
         /**
@@ -101,7 +101,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckPDF.observe(this) {
             if (it) {
-                documentViewModel.getAllPdfs(application.contentResolver)
+//                documentViewModel.getAllPdfs(application.contentResolver)
             }
         }
         /**
@@ -127,7 +127,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckXLS.observe(this) {
             if (it) {
-                documentViewModel.getAllExcels(application.contentResolver)
+//                documentViewModel.getAllExcels(application.contentResolver)
             }
         }
         /**
@@ -153,7 +153,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckPPT.observe(this) {
             if (it) {
-                documentViewModel.getAllPPts(application.contentResolver)
+//                documentViewModel.getAllPPts(application.contentResolver)
             }
         }
         /**
@@ -179,29 +179,26 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckTxt.observe(this) {
             if (it) {
-                documentViewModel.getAllTXTs(application.contentResolver)
+//                documentViewModel.getAllTXTs(application.contentResolver)
             }
         }
     }
 
 
     private fun setRCVDocument() {
-
         val documentAdapter = DocumentAdapter(activity = this@DocumentActivity)
         binding.rcvDocument.adapter = documentAdapter
         documentViewModel.documentItems.observe(this) {
-            documentAdapter.documents.clear()
-            documentAdapter.documents.addAll(it)
-            documentAdapter.notifyDataSetChanged()
-            binding.txtNumberFile.text = "${it.size} Files"
+            documentAdapter.updateData(it)
+            binding.txtNumberFile.text = if(it.size> 0)"${it.size} Files" else "0 Files"
             checkTotalSize(it)
         }
     }
 
     private fun checkTotalSize(documents: ArrayList<DocumentItem>) {
         var total = 0
-        for (item in documents) {
-            total += item.size / 1000
+        documents.forEach{
+            total += it.size?.div(1000) ?: 0
         }
         var sizeText = ""
         sizeText = if (total > 1024) {
@@ -214,7 +211,7 @@ class DocumentActivity : AppCompatActivity() {
             sizeText.plus(total).plus(" KB")
         }
 
-        binding.txtNumberSize.text = sizeText
+        binding.txtNumberSize.text = if (documents.size > 0) sizeText else "0 MB"
     }
 
     override fun onSupportNavigateUp(): Boolean {

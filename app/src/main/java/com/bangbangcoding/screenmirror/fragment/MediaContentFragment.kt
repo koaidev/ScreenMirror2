@@ -47,7 +47,6 @@ class MediaContentFragment(private val position: Int) : Fragment() {
                 mediaAdapter.medias.clear()
                 val medias = it
                 mediaAdapter.medias.addAll(medias)
-
                 mediaAdapter.notifyDataSetChanged()
             }
         }
