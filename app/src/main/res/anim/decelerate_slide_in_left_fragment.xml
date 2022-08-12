@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/decelerate_interpolator"
+    android:startOffset="@integer/v5_transition_delay"
+    >
+    <translate android:fromXDelta="-30%"
+        android:toXDelta="0%"
+        android:duration="@integer/v5_transition_duration_in"
+        />
+    <alpha android:fromAlpha="0"
+        android:toAlpha="1"
+        android:duration="@integer/v5_transition_duration_in"
+        />
+</set>

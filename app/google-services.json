@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "903766802755",
+    "project_id": "screen-mirror-2fd63",
+    "storage_bucket": "screen-mirror-2fd63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903766802755:android:f6954cac6577708feb2ff6",
+        "android_client_info": {
+          "package_name": "com.bangbangcoding.screenmirror"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903766802755-1l9rr0tceo3rq6h4a9evj1g67ddn9p1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByjK0eyeGlAaAKw6TwasPyxlydgJLtnhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903766802755-1l9rr0tceo3rq6h4a9evj1g67ddn9p1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

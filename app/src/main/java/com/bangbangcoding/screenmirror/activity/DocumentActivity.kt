@@ -1,24 +1,39 @@
 package com.bangbangcoding.screenmirror.activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.provider.DocumentsContract
 import android.view.MotionEvent
 import android.view.View
 import android.widget.PopupWindow
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.net.toUri
+import androidx.documentfile.provider.DocumentFile
 import androidx.lifecycle.ViewModelProvider
 import com.bangbangcoding.screenmirror.R
 import com.bangbangcoding.screenmirror.adapter.DocumentAdapter
 import com.bangbangcoding.screenmirror.databinding.ActivityDocumentBinding
 import com.bangbangcoding.screenmirror.databinding.PopupFilterBinding
-import com.bangbangcoding.screenmirror.model.DocumentItem
-import com.bangbangcoding.screenmirror.viewmodel.DocumentViewModel
-
+import com.bangbangcoding.screenmirror.db.model.DocumentItem
+import com.bangbangcoding.screenmirror.db.viewmodel.DocumentViewModel
+private const val OPEN_DIRECTORY_REQUEST_CODE = 0xf11e
 class DocumentActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDocumentBinding
     private lateinit var documentViewModel: DocumentViewModel
+    private lateinit var sharedPref: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
         documentViewModel = ViewModelProvider(this)[DocumentViewModel::class.java]
         binding = ActivityDocumentBinding.inflate(layoutInflater)
@@ -29,19 +44,51 @@ class DocumentActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = resources.getString(R.string.document)
-        documentViewModel.getAllDocuments(application.contentResolver)
+        sharedPref = getSharedPreferences(
+            getString(R.string.preference_file_key), Context.MODE_PRIVATE
+        )
+        when (sharedPref.getString("current_document", resources.getString(R.string.all))) {
+            resources.getString(R.string.all) -> {
+                documentViewModel.getAllDocuments(application.contentResolver)
+
+            }
+            resources.getString(R.string.word) -> {
+                documentViewModel.getAllWords(application.contentResolver)
+
+            }
+            resources.getString(R.string.pdf) -> {
+                documentViewModel.getAllPdfs(application.contentResolver)
+
+            }
+            resources.getString(R.string.excel) -> {
+                documentViewModel.getAllExcels(application.contentResolver)
+
+            }
+            resources.getString(R.string.slide) -> {
+                documentViewModel.getAllPPts(application.contentResolver)
+
+            }
+            resources.getString(R.string.txt) -> {
+                documentViewModel.getAllTXTs(application.contentResolver)
+
+            }
+            else -> {
+                documentViewModel.getAllDocuments(application.contentResolver)
+            }
+        }
         setRCVDocument()
 
         binding.imgFilter.setOnClickListener {
             setPopupFilter()
         }
+
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun setPopupFilter() {
         val settingBinding = PopupFilterBinding.inflate(layoutInflater)
         val popupSetting = PopupWindow(this)
-
+        popupSetting.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         popupSetting.contentView = settingBinding.root
         popupSetting.isOutsideTouchable = true
         popupSetting.showAsDropDown(binding.imgFilter)
@@ -52,25 +99,69 @@ class DocumentActivity : AppCompatActivity() {
             }
             false
         })
+
+        when (sharedPref.getString("current_document", resources.getString(R.string.all))) {
+            resources.getString(R.string.all) -> {
+                settingBinding.rdAll.isChecked = true
+            }
+            resources.getString(R.string.word) -> {
+                settingBinding.rdWord.isChecked = true
+
+            }
+            resources.getString(R.string.pdf) -> {
+                settingBinding.rdPdf.isChecked = true
+
+            }
+            resources.getString(R.string.excel) -> {
+                settingBinding.rdExcel.isChecked = true
+
+            }
+            resources.getString(R.string.slide) -> {
+                settingBinding.rdPptx.isChecked = true
+
+            }
+            resources.getString(R.string.txt) -> {
+                settingBinding.rdTxt.isChecked = true
+
+            }
+        }
+
         /**
-         * word
+         * ALL
          * */
-        settingBinding.cbWord.setOnCheckedChangeListener { _, isChecked ->
-            documentViewModel.isCheckWord.value = isChecked
+        settingBinding.rdAll.setOnCheckedChangeListener { _, isChecked ->
+            documentViewModel.isCheckAll.value = isChecked
             if (isChecked) {
-                settingBinding.cbExcel.isChecked = false
-                settingBinding.cbSlide.isChecked = false
-                settingBinding.cbTxt.isChecked = false
-                settingBinding.cbPdf.isChecked = false
+                sharedPref.edit().putString("current_document", resources.getString(R.string.all))
+                    .apply()
+                documentViewModel.isCheckWord.value = false
                 documentViewModel.isCheckPPT.value = false
                 documentViewModel.isCheckXLS.value = false
                 documentViewModel.isCheckPDF.value = false
                 documentViewModel.isCheckTxt.value = false
                 popupSetting.dismiss()
+            }
+        }
 
-
-            } else {
+        documentViewModel.isCheckAll.observe(this) {
+            if (it) {
                 documentViewModel.getAllDocuments(application.contentResolver)
+            }
+        }
+        /**
+         * word
+         * */
+        settingBinding.rdWord.setOnCheckedChangeListener { _, isChecked ->
+            documentViewModel.isCheckWord.value = isChecked
+            if (isChecked) {
+                sharedPref.edit().putString("current_document", resources.getString(R.string.word))
+                    .apply()
+                documentViewModel.isCheckAll.value = false
+                documentViewModel.isCheckPPT.value = false
+                documentViewModel.isCheckXLS.value = false
+                documentViewModel.isCheckPDF.value = false
+                documentViewModel.isCheckTxt.value = false
+                popupSetting.dismiss()
             }
         }
 
@@ -82,20 +173,17 @@ class DocumentActivity : AppCompatActivity() {
         /**
          * pdf
          * */
-        settingBinding.cbPdf.setOnCheckedChangeListener { _, isChecked ->
+        settingBinding.rdPdf.setOnCheckedChangeListener { _, isChecked ->
             documentViewModel.isCheckPDF.value = isChecked
             if (isChecked) {
-                settingBinding.cbExcel.isChecked = false
-                settingBinding.cbSlide.isChecked = false
-                settingBinding.cbTxt.isChecked = false
-                settingBinding.cbWord.isChecked = false
+                sharedPref.edit().putString("current_document", resources.getString(R.string.pdf))
+                    .apply()
+                documentViewModel.isCheckAll.value = false
                 documentViewModel.isCheckPPT.value = false
                 documentViewModel.isCheckXLS.value = false
                 documentViewModel.isCheckWord.value = false
                 documentViewModel.isCheckTxt.value = false
                 popupSetting.dismiss()
-            } else {
-                documentViewModel.getAllDocuments(application.contentResolver)
             }
         }
 
@@ -107,21 +195,18 @@ class DocumentActivity : AppCompatActivity() {
         /**
          * excel
          * */
-        settingBinding.cbExcel.setOnCheckedChangeListener { _, isChecked ->
+        settingBinding.rdExcel.setOnCheckedChangeListener { _, isChecked ->
             documentViewModel.isCheckXLS.value = isChecked
             if (isChecked) {
-                settingBinding.cbWord.isChecked = false
-                settingBinding.cbSlide.isChecked = false
-                settingBinding.cbTxt.isChecked = false
-                settingBinding.cbPdf.isChecked = false
+                sharedPref.edit().putString("current_document", resources.getString(R.string.excel))
+                    .apply()
+                documentViewModel.isCheckAll.value = false
                 documentViewModel.isCheckPPT.value = false
                 documentViewModel.isCheckWord.value = false
                 documentViewModel.isCheckPDF.value = false
                 documentViewModel.isCheckTxt.value = false
                 popupSetting.dismiss()
 
-            } else {
-                documentViewModel.getAllDocuments(application.contentResolver)
             }
         }
 
@@ -133,21 +218,18 @@ class DocumentActivity : AppCompatActivity() {
         /**
          * ppt
          * */
-        settingBinding.cbSlide.setOnCheckedChangeListener { _, isChecked ->
+        settingBinding.rdPptx.setOnCheckedChangeListener { _, isChecked ->
             documentViewModel.isCheckPPT.value = isChecked
             if (isChecked) {
-                settingBinding.cbExcel.isChecked = false
-                settingBinding.cbWord.isChecked = false
-                settingBinding.cbTxt.isChecked = false
-                settingBinding.cbPdf.isChecked = false
+                sharedPref.edit().putString("current_document", resources.getString(R.string.slide))
+                    .apply()
+                documentViewModel.isCheckAll.value = false
                 documentViewModel.isCheckWord.value = false
                 documentViewModel.isCheckXLS.value = false
                 documentViewModel.isCheckPDF.value = false
                 documentViewModel.isCheckTxt.value = false
                 popupSetting.dismiss()
 
-            } else {
-                documentViewModel.getAllDocuments(application.contentResolver)
             }
         }
 
@@ -159,21 +241,18 @@ class DocumentActivity : AppCompatActivity() {
         /**
          * txt
          * */
-        settingBinding.cbTxt.setOnCheckedChangeListener { _, isChecked ->
+        settingBinding.rdTxt.setOnCheckedChangeListener { _, isChecked ->
             documentViewModel.isCheckTxt.value = isChecked
             if (isChecked) {
-                settingBinding.cbExcel.isChecked = false
-                settingBinding.cbSlide.isChecked = false
-                settingBinding.cbWord.isChecked = false
-                settingBinding.cbPdf.isChecked = false
+                sharedPref.edit().putString("current_document", resources.getString(R.string.txt))
+                    .apply()
+                documentViewModel.isCheckAll.value = false
                 documentViewModel.isCheckPPT.value = false
                 documentViewModel.isCheckXLS.value = false
                 documentViewModel.isCheckPDF.value = false
                 documentViewModel.isCheckWord.value = false
                 popupSetting.dismiss()
 
-            } else {
-                documentViewModel.getAllDocuments(application.contentResolver)
             }
         }
 
@@ -182,11 +261,33 @@ class DocumentActivity : AppCompatActivity() {
                 documentViewModel.getAllTXTs(application.contentResolver)
             }
         }
+        binding.imgReadFile.setOnClickListener { openDirectory() }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == OPEN_DIRECTORY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val directoryUri = data?.data ?: return
+
+            contentResolver.takePersistableUriPermission(
+                directoryUri,
+                Intent.FLAG_GRANT_READ_URI_PERMISSION
+            )
+            showDirectoryContents(directoryUri)
+        }
+    }
+    private fun showDirectoryContents(directoryUri: Uri) {
+
+    }
+
+    private fun openDirectory() {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
+        startActivityForResult(intent, OPEN_DIRECTORY_REQUEST_CODE)
     }
 
 
+    @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
     private fun setRCVDocument() {
-
         val documentAdapter = DocumentAdapter(activity = this@DocumentActivity)
         binding.rcvDocument.adapter = documentAdapter
         documentViewModel.documentItems.observe(this) {
@@ -194,6 +295,13 @@ class DocumentActivity : AppCompatActivity() {
             documentAdapter.documents.addAll(it)
             documentAdapter.notifyDataSetChanged()
             binding.txtNumberFile.text = "${it.size} Files"
+            if (it.size == 0) {
+                binding.txtNoDocumentFound.visibility = View.VISIBLE
+                binding.rcvDocument.visibility = View.GONE
+            } else {
+                binding.txtNoDocumentFound.visibility = View.GONE
+                binding.rcvDocument.visibility = View.VISIBLE
+            }
             checkTotalSize(it)
         }
     }

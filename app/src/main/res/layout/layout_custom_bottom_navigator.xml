@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/white"
+    app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+    <ImageButton
+        android:id="@+id/navigation_back"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:padding="@dimen/_12sdp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow_back_28"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/selector_color_active_back" />
+
+    <ImageButton
+        android:id="@+id/navigation_next"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:padding="@dimen/_12sdp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow_next_28"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/navigation_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/selector_color_active_back" />
+
+
+    <ImageView
+        android:id="@+id/navigation_folder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_1"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="14dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_down_svg"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/selector_color_active_nav" />
+
+    <TextView
+        android:id="@+id/tvNumDownloading"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="@dimen/margin_3"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:background="@drawable/bg_round_red"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="@color/white"
+        android:textSize="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/navigation_folder"
+        app:layout_constraintStart_toStartOf="@+id/navigation_folder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/navigation_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="13dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_tab_svg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_history"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/selector_color_active_nav" />
+
+    <TextView
+        android:id="@+id/tvNumTabs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/padding_1"
+        android:text="10"
+        android:textColor="@color/selector_color_active_nav"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/navigation_tabs"
+        app:layout_constraintStart_toStartOf="@+id/navigation_tabs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/navigation_history"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="@dimen/margin_1"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:padding="@dimen/_12sdp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_history"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigation_add_new_tab"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/selector_color_active_nav" />
+
+    <ImageButton
+        android:id="@+id/navigation_add_new_tab"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/_12sdp"
+        android:scaleType="centerInside"
+        android:src="@drawable/add_shortcut_disable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

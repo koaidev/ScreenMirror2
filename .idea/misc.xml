@@ -8,12 +8,23 @@
         <entry key="app/src/main/res/drawable-v24/loading_page_progress_status.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable-v24/shapebgsearch.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable-v24/tab_selector.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/background_bottom.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/bg_round.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/bg_round_blue.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/bg_round_stroke_grey.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/bg_rounded_gray.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_search.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/bg_tab_preview.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/bg_tab_prview_header.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/clip_connective.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_arrow_back_disable.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_arrow_forward_disable.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_file_black_24dp.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_folder_black_24dp.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_history.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ic_rectangle_29.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ripple_bg.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ripple_bg_blue.xml" value="0.1585" />
@@ -29,35 +40,95 @@
         <entry key="app/src/main/res/layout/activity_blank.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/activity_browser.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/activity_document.xml" value="0.25301204819277107" />
+        <entry key="app/src/main/res/layout/activity_download.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/activity_get_link_through_webview.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24974358974358973" />
         <entry key="app/src/main/res/layout/activity_media.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/activity_tab.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/layout/activity_tik_tok_download_webview.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/activity_tutorial.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/activity_video_play.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/activity_web.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/address_bar.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/bookmark_list_item.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/bottomsheet_tips.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/browser.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/browser_content.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/content_document.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/custom_toast_layout.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/delete_history_dialog.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/dialog_add_new_shortcut.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/dialog_ads_effect.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/dialog_youtube.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/directory_item.xml" value="0.22237442922374429" />
         <entry key="app/src/main/res/layout/dlg_progress.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/dlg_setting.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/dlg_validation.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/exo_controller.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_audios.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_bookmarks.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_buzz_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_daily_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/fragment_document.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_download.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_downloaded.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_facebook_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_feedback.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_guide.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_help.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/fragment_image.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_imdb_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_instagram_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_linkedin_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_links.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_management_tab.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/fragment_media.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_more_setting.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/fragment_new_tab_v2.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_path_download.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_privacy.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_processing.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_tabs.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_test_ads.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_tiktok_paste_link.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/fragment_tutorial.xml" value="0.25364583333333335" />
-        <entry key="app/src/main/res/layout/fragment_web_page_v1.xml" value="0.11302083333333333" />
-        <entry key="app/src/main/res/layout/fragment_web_page_v2.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_twitter_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_video_player.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_videos.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/fragment_web.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/fragment_web_page_v1.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/fragment_web_page_v2.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/grid_media_item.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/item_document.xml" value="0.2526041666666667" />
-        <entry key="app/src/main/res/layout/item_media.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/item_download_page.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/item_download_process.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/item_history_list.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/item_media.xml" value="0.24974358974358973" />
         <entry key="app/src/main/res/layout/item_mirror.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/item_shortcut.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/item_shortcut_can_remove.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/item_simple_list.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/item_suggestion.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/item_top_page.xml" value="0.24974358974358973" />
         <entry key="app/src/main/res/layout/layout_add_tab_item.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/layout_address_bar.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/layout_address_bar_dialog.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/layout_address_bar_edit.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/layout_bottom_navbar.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/layout_common_list.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/layout_custom_bottom_navigator.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/layout_custom_toolbar.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/layout_grid_item.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/layout_history_item.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/layout_horizontal_page.xml" value="0.25364583333333335" />
@@ -65,14 +136,29 @@
         <entry key="app/src/main/res/layout/layout_new_tab.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/layout_setting_dialog.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/layout_tab_dialog.xml" value="0.11302083333333333" />
-        <entry key="app/src/main/res/layout/layout_tab_item.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/layout_tab_item.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/layout_tool_bar.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/layout_tool_bar_paste_link.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/navigation_web.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/not_support_mirror_dialog.xml" value="0.24974358974358973" />
         <entry key="app/src/main/res/layout/oops_dialog.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/popup_filter.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/popup_setting.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/popup_window_action_history.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/tab_preview.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/time_layout.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.31826782226562506" />
+        <entry key="app/src/main/res/layout/toolbar_content.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/two_line_autocomplete.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/web_browser.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/menu/main.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/menu/search.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/xml/file_path.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/xml/searchable.xml" value="0.25364583333333335" />
+        <entry key="nativetemplates/src/main/res/layout/gnt_medium_template_view.xml" value="0.22546296296296298" />
+        <entry key="nativetemplates/src/main/res/layout/gnt_small_template_view.xml" value="0.22546296296296298" />
       </map>
     </option>
   </component>

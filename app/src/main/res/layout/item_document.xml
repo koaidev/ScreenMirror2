@@ -6,7 +6,7 @@
 
         <variable
             name="document"
-            type="com.bangbangcoding.screenmirror.model.DocumentItem" />
+            type="com.bangbangcoding.screenmirror.db.model.DocumentItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

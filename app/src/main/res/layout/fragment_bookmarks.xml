@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.feature.bookmarks.BookmarksFragment">
+
+    <ImageView
+        android:id="@+id/ivBookmark"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_bookmark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_1p5"
+        android:text="@string/txt_menu_bookmarks"
+        android:textColor="@color/black_text"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBookmark"
+        app:layout_constraintStart_toEndOf="@+id/ivBookmark"
+        app:layout_constraintTop_toTopOf="@+id/ivBookmark" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBookmark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

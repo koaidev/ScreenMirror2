@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.bangbangcoding.screenmirror.R
 import com.bangbangcoding.screenmirror.databinding.FragmentTutorialBinding
-import com.bangbangcoding.screenmirror.viewmodel.TutorialViewModel
+import com.bangbangcoding.screenmirror.db.viewmodel.TutorialViewModel
 
 class TutorialFragment(private val position: Int) : Fragment() {
     private lateinit var binding: FragmentTutorialBinding

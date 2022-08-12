@@ -1,0 +1,18 @@
+package com.bangbangcoding.screenmirror.web.data.local.room.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.bangbangcoding.screenmirror.web.data.local.room.entity.VideoInfo
+import io.reactivex.Maybe
+
+@Dao
+interface VideoDao {
+
+    @Query("SELECT * FROM VideoInfo WHERE originalUrl = :url")
+    fun getVideoById(url: String): Maybe<VideoInfo>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertVideo(videoInfo: VideoInfo)
+}

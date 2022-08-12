@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bangbangcoding.screenmirror">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,7 +17,7 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name=".easybrowser.EasyApplication"
+        android:name=".web.KunApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -28,37 +32,59 @@
         android:theme="@style/Theme.ScreenMirror"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <activity
-            android:name=".easybrowser.page.browser.BrowserActivity"
+            android:name=".web.ui.base.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".web.ui.paste.GetLinkThroughWebView"
+            android:exported="false" />
+        <activity
+            android:name=".web.ui.WebActivity"
             android:exported="true">
-            <intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                tools:targetApi="m">
                 <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.SEARCH" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
+                <!-- If a user clicks on a shared link that uses the "http" scheme, your
+                     app should be able to delegate that traffic to "https". -->
                 <data android:scheme="http" />
                 <data android:scheme="https" />
-                <data android:host="m.facebook.com" />
-                <data android:host="www.instagram.com" />
-                <data android:host="instagram.com" />
-                <data android:host="www.dailymotion.com" />
-                <data android:host="dailymotion.com" />
-                <data android:host="vimeo.com" />
-                <data android:host="m.vlive.tv" />
-                <data android:host="www.tumblr.com" />
-                <data android:host="m.twitch.tv" />
+
+                <!-- Include one or more domains that should be verified. -->
+                <!--                <data android:host="..." />-->
             </intent-filter>
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
         </activity>
         <activity
+            android:name=".web.ui.player.VideoPlayerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".web.ui.studio.DownloadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".web.ui.TestAdsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".web.utils.IntentActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+
+        <activity
             android:name=".activity.TutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.HistoryActivity"
             android:exported="false" />
         <activity
             android:name=".activity.DocumentActivity"
@@ -93,7 +119,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_path" />
         </provider>
-
     </application>
 
 </manifest>

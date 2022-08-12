@@ -7,6 +7,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#2D8EFF</color>
 
+    <color name="bg_main">#f1f2f6</color>
 
 
     <color name="deep_black">#333333</color>
@@ -36,4 +37,38 @@
     <color name="gray_700">#616161</color>
     <color name="gray_800">#424242</color>
     <color name="gray_900">#212121</color>
+    <color name="colorMain">#037CF9</color>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#3044AF</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="black_text">#252525</color>
+    <color name="blue_m11">#037CF9</color>
+
+    <color name="text_primary">#5b5b5b</color>
+    <color name="time_hide">#bfbdbd</color>
+    <color name="divider_list_color">#496793</color>
+
+    <color name="colorNegative">#c62828</color>
+    <color name="white100">#C0FFFFFF</color>
+    <color name="white85">#D9FFFFFF</color>
+    <color name="icon_light_theme">#efefef</color>
+    <color name="icon_dark_theme">#90333333</color>
+    <color name="gray_a8">#a8a8a8</color>
+    <color name="gray">#f2f2f2</color>
+    <color name="black_55">#8C000000</color>
+    <color name="black_85">#D9000000</color>
+    <color name="black_15">#26000000</color>
+    <color name="light_gray">#F2F3F5</color>
+    <color name="dark_gray">#98A4B4</color>
+    <color name="gray_m3">#B3b3b3</color>
+    <color name="black_m2">#110e2f</color>
+    <color name="transparent">#00000000</color>
+    <color name="secondary_color">#66000000</color>
+    <color name="oranger">#FB8D00</color>
+
+    <color name="ssl_secured">#4CAF50</color>
+    <color name="ssl_unsecured">#F44336</color>
 </resources>

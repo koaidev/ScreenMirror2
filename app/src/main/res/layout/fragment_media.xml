@@ -9,7 +9,7 @@
     tools:context=".fragment.MediaContentFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_media"
+        android:id="@+id/rcv_media_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"

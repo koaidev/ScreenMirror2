@@ -26,19 +26,19 @@
                 android:layout_height="?actionBarSize"
                 android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/img_read_file"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/img_read_file"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@drawable/ripple_bg_grey"
+                android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:contentDescription="@string/document"
                 android:focusable="true"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_14sdp"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
@@ -46,15 +46,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_album" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/img_filter"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@drawable/ripple_bg_grey"
+                android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:contentDescription="@string/document"
                 android:focusable="true"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_14sdp"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
             android:gravity="center_vertical"
-            android:text="4 File"
+            android:text="0 File"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,7 +90,7 @@
             android:id="@+id/txt_number_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="65.40 MB"
+            android:text="0.00 MB"
             android:textColor="#3AC56A"
             app:layout_constraintBottom_toTopOf="@+id/rcv_document"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,6 +107,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_number_file"
             tools:listitem="@layout/item_document" />
+        <TextView
+            android:id="@+id/txt_no_document_found"
+            android:visibility="visible"
+            android:textSize="@dimen/_14ssp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/no_document_found"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_number_file"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

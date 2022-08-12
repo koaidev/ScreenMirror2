@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popuplayout"
+    android:layout_width="220dp"
+    android:layout_height="192dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvRename"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:text="@string/txt_title_rename"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_marginStart="44dp"-->
+<!--        android:background="@color/gray"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvRename"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/tvRename"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvRename" />-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="24dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        android:layout_marginStart="@dimen/margin_1"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:src="@drawable/ic_menu_3416"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvRename"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvRename"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/tvRename"-->
+<!--        app:tint="@color/gray" />-->
+
+    <TextView
+        android:id="@+id/tvDelete"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_1p5"
+        android:paddingStart="15dp"
+        android:text="@string/txt_delete"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tvRename" />
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_marginStart="44dp"-->
+<!--        android:background="@color/gray"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvDelete"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/tvDelete"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvDelete" />-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="24dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        android:layout_marginStart="@dimen/margin_1"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:src="@drawable/ic_menu_delete"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvDelete"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvDelete"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/tvDelete"-->
+<!--        app:tint="@color/gray" />-->
+
+    <TextView
+        android:id="@+id/tvEditWithVideoMaker"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:text="@string/txt_edit_with_video_maker"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tvDelete" />
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="1dp"-->
+<!--        android:layout_marginStart="44dp"-->
+<!--        android:background="@color/gray"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvEditWithVideoMaker"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/tvEditWithVideoMaker"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvEditWithVideoMaker" />-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="24dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        android:layout_marginStart="@dimen/margin_1"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:src="@drawable/ic_edit"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvEditWithVideoMaker"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvEditWithVideoMaker"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/tvEditWithVideoMaker" />-->
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/ripple_rectangle_dark"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_1p5"
+        android:paddingStart="15dp"
+        android:text="@string/txt_info"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditWithVideoMaker" />
+
+<!--    <ImageView-->
+<!--        android:layout_width="24dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        android:layout_marginStart="@dimen/margin_1"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:src="@android:drawable/ic_menu_info_details"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvInfo"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvInfo"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/tvInfo" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

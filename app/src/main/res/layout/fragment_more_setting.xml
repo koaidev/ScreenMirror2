@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+>
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/layout_tool_bar" />
+
+    <TextView
+        android:id="@+id/tvLanguageSelected"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/txt_default"
+        android:visibility="gone"
+        android:textSize="13dp"
+        android:drawableEnd="@drawable/ic_drop_down_blue"
+        android:gravity="center"
+        android:drawablePadding="@dimen/padding_1"
+        android:textColor="@color/blue_m11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvLanguage"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLanguage"/>
+
+    <TextView
+        android:id="@+id/tvLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:text="@string/txt_language_options"
+        android:background="@drawable/ripple_btn_setting"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginEnd="@dimen/margin_2"
+        android:background="@color/gray_m3"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLanguage" />
+
+    <TextView
+        android:id="@+id/tvSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/search_engine_google"
+        android:textSize="13dp"
+        android:drawableEnd="@drawable/ic_drop_down_blue"
+        android:gravity="center"
+        android:drawablePadding="@dimen/padding_1"
+        android:textColor="@color/blue_m11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSearchEngine"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSearchEngine"/>
+
+    <TextView
+        android:id="@+id/tvSearchEngine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/txt_search_engine"
+        android:background="@drawable/ripple_btn_setting"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLanguage" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:background="#DDD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSearchEngine" />
+
+    <TextView
+        android:id="@+id/tvSavePassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="@dimen/padding_4"
+        android:text="@string/txt_save_your_password"
+        android:background="@drawable/ripple_btn_setting"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchEngine" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginBottom="@dimen/margin_1p5"
+        android:text="@string/txt_recommended"
+        android:textColor="@color/gray_m3"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSavePassword"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchSavePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSavePassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvSavePassword" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginEnd="@dimen/margin_2"
+        android:background="@color/gray_m3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSavePassword" />
+
+    <TextView
+        android:id="@+id/tvSyncGallery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_2"
+        android:paddingTop="@dimen/padding_2"
+        android:paddingBottom="@dimen/padding_4"
+        android:visibility="gone"
+        android:text="@string/txt_sync_to_gallery"
+        android:textSize="16dp"
+        android:background="@drawable/ripple_btn_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSavePassword" />
+
+
+    <TextView
+        android:id="@+id/tvStatusSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginBottom="@dimen/margin_1p5"
+        android:text="@string/txt_turn_on"
+        android:textColor="@color/gray_m3"
+        android:visibility="gone"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSyncGallery"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSyncGallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvSyncGallery" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginEnd="@dimen/margin_2"
+        android:background="@color/gray_m3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSyncGallery" />
+
+    <TextView
+        android:id="@+id/tvBlockAds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_2"
+        android:paddingTop="@dimen/padding_2"
+        android:paddingBottom="@dimen/padding_4"
+        android:text="@string/txt_block_ads"
+        android:textSize="16dp"
+        android:background="@drawable/ripple_btn_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSyncGallery" />
+
+
+    <TextView
+        android:id="@+id/tvStatusBlockAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginBottom="@dimen/margin_1p5"
+        android:text="@string/txt_turn_on"
+        android:textColor="@color/gray_m3"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBlockAds"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchBlockAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBlockAds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvBlockAds" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:background="#DDD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBlockAds" />
+
+    <TextView
+        android:id="@+id/tvClearCookies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:padding="@dimen/padding_2"
+        android:text="@string/txt_clear_cookies"
+        android:background="@drawable/ripple_btn_setting"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBlockAds" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginEnd="@dimen/margin_2"
+        android:background="@color/gray_m3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvClearCookies" />
+
+    <TextView
+        android:id="@+id/tvClearHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_2"
+        android:text="@string/txt_clear_browser_history"
+        android:textSize="16dp"
+        android:background="@drawable/ripple_btn_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvClearCookies" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginEnd="@dimen/margin_2"
+        android:background="@color/gray_m3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvClearHistory" />
+
+    <TextView
+        android:id="@+id/tvClearCache"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_2"
+        android:background="@drawable/ripple_btn_setting"
+        android:text="@string/txt_clear_cache"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvClearHistory" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,17 @@
 package com.bangbangcoding.screenmirror.adapter
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
-import android.webkit.WebView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangbangcoding.screenmirror.R
 import com.bangbangcoding.screenmirror.databinding.ItemDocumentBinding
-import com.bangbangcoding.screenmirror.model.DocumentItem
+import com.bangbangcoding.screenmirror.db.model.DocumentItem
 
 
 class DocumentAdapter(
@@ -32,6 +32,7 @@ class DocumentAdapter(
         )
     }
 
+    @SuppressLint("IntentReset")
     override fun onBindViewHolder(holder: DocumentVH, position: Int) {
         holder.binding.document = documents[position]
         holder.binding.root.setOnClickListener {
@@ -39,11 +40,12 @@ class DocumentAdapter(
                 val intent = Intent(Intent.ACTION_VIEW)
                 val cR: ContentResolver = activity.contentResolver
                 val mime = MimeTypeMap.getSingleton()
-                val mimeType = mime.getExtensionFromMimeType(documents[position].uriDoc?.let { it1 ->
-                    cR.getType(
-                        it1
-                    )
-                })
+                val mimeType =
+                    mime.getExtensionFromMimeType(documents[position].uriDoc?.let { it1 ->
+                        cR.getType(
+                            it1
+                        )
+                    })
                 intent.setDataAndType(
                     documents[position].uriDoc,
                     "application/$mimeType"

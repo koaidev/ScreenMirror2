@@ -1,7 +1,9 @@
 package com.bangbangcoding.screenmirror.adapter
 
+import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
@@ -12,38 +14,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bangbangcoding.screenmirror.R
-import com.bangbangcoding.screenmirror.model.MediaItem
+import com.bangbangcoding.screenmirror.db.model.MediaItem
+import com.bangbangcoding.screenmirror.db.model.group.GeneralItem
 import com.bangbangcoding.screenmirror.utils.Common
 import com.bumptech.glide.Glide
-import java.util.*
+import com.bumptech.glide.load.data.mediastore.ThumbFetcher
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
-import kotlin.time.Duration.Companion.hours
-import kotlin.time.Duration.Companion.minutes
-import kotlin.time.Duration.Companion.seconds
+
 
 @BindingAdapter("content_uri")
-fun setThumbnail(imageView: ImageView, media: MediaItem) {
-    try {
-        val thumbnail: Bitmap =
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                imageView.context.contentResolver.loadThumbnail(
-                    media.uri, Size(640, 480), null
-                )
-            } else {
-                MediaStore.Images.Thumbnails.getThumbnail(
-                    imageView.context.contentResolver,
-                    media.id,
-                    MediaStore.Images.Thumbnails.MINI_KIND,
-                    null
-                )
-            }
-        println("Thumbnail: $thumbnail")
-        Glide.with(imageView).load(thumbnail).placeholder(R.drawable.place_holder).into(imageView)
-    } catch (e: Exception) {
-        println(e.message)
-    }
+fun setThumbnail(imageView: ImageView, media: GeneralItem) {
+    println("Uri: ${media.uri}")
+    Glide.with(imageView.context).load(media.uri)
+        .thumbnail(Glide.with(imageView.context).load(media.uri)).into(imageView)
 }
 
+@SuppressLint("SetTextI18n")
 @BindingAdapter("duration")
 fun setDuration(textView: TextView, duration: Int?) {
     if (duration != null && duration > 0) {
@@ -55,8 +45,10 @@ fun setDuration(textView: TextView, duration: Int?) {
         val ses = TimeUnit.SECONDS.convert(duration.toLong(), TimeUnit.MILLISECONDS) % 60
         h = if (hours > 9) {
             "$hours"
-        } else {
+        } else if (hours in 1..9) {
             "0$hours"
+        } else {
+            ""
         }
         m = if (mins > 9) {
             "$mins"
@@ -84,13 +76,14 @@ fun setVisibleVideo(imageView: ImageView, isVideo: Boolean, duration: Int?) {
     }
 }
 
+@SuppressLint("SetTextI18n")
 @BindingAdapter(value = ["uri_doc", "date_create", "size"])
 fun setInfoDocument(textView: TextView, uriDoc: Uri, dateCreate: Long, size: Int) {
     println("TimeCreate: $dateCreate")
     println("TimeNow: ${System.currentTimeMillis()}")
 
-    val date = Common.getDate(dateCreate*1000, "dd/MM/yyyy hh:mm:ss")
-    val now = Common.getDate(System.currentTimeMillis(),"dd/MM/yyyy hh:mm:ss")
+    val date = Common.getDate(dateCreate * 1000, "dd/MM/yyyy hh:mm:ss")
+    val now = Common.getDate(System.currentTimeMillis(), "dd/MM/yyyy hh:mm:ss")
     println("DateCreate: $date")
     println("DateNow: $now")
     val cR: ContentResolver = textView.context.contentResolver
@@ -114,6 +107,7 @@ fun setInfoDocument(textView: TextView, uriDoc: Uri, dateCreate: Long, size: Int
     textView.text = "$mimeType - $sizeText\n$date"
 }
 
+@SuppressLint("UseCompatLoadingForDrawables")
 @BindingAdapter("uri")
 fun setImageDoc(imageView: ImageView, uri: Uri) {
     val cR: ContentResolver = imageView.context.contentResolver
@@ -174,4 +168,33 @@ fun setImageDoc(imageView: ImageView, uri: Uri) {
             )
         }
     }
+}
+
+@BindingAdapter(value = ["enable_remove","visibility_remove"])
+fun setVisible(imageView: ImageView, enableRemove: Boolean, visibilityRemove: Boolean) {
+    imageView.visibility = if (enableRemove && visibilityRemove) {
+        View.VISIBLE
+    } else {
+        View.GONE
+    }
+}
+
+@OptIn(DelicateCoroutinesApi::class)
+@BindingAdapter("url_website")
+fun setImageIcon(imageView: ImageView, urlWebsite: String) {
+    if (urlWebsite.isNotEmpty()) {
+        GlobalScope.launch(Dispatchers.Main) {
+            Glide.with(imageView.context)
+                .load(Uri.parse("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=$urlWebsite&size=128"))
+                .placeholder(R.drawable.place_holder)
+                .into(imageView)
+        }
+    } else {
+        imageView.setImageResource(R.drawable.ic_add)
+    }
+}
+
+@BindingAdapter("src")
+fun setImagePreview(imageView: ImageView, image: Bitmap) {
+    imageView.setImageBitmap(image)
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_feedback"
+        android:icon="@drawable/ic_menu_3416"
+        app:showAsAction="ifRoom"
+        android:title="@string/text_feedback" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_menu_3160"
+        app:showAsAction="ifRoom"
+        android:title="@string/text_settings" />
+
+    <item
+        android:id="@+id/navigation_delete"
+        android:icon="@drawable/ic_menu_3415"
+        app:showAsAction="ifRoom"
+        android:title="@string/txt_delete" />
+</menu>

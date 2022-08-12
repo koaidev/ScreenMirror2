@@ -1,3 +1,42 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="browser_title_padding">40dp</dimen>
+    <dimen name="text_small">14dp</dimen>
+    <dimen name="browser_title_size">45dp</dimen>
+
+    <dimen name="corner_small">4dp</dimen>
+    <dimen name="corner_normal">8dp</dimen>
+    <dimen name="elevation_small">4dp</dimen>
+    <dimen name="elevation_normal">8dp</dimen>
+
+    <dimen name="padding_1">8dp</dimen>
+    <dimen name="padding_2">16dp</dimen>
+    <dimen name="padding_3">24dp</dimen>
+    <dimen name="padding_4">32dp</dimen>
+    <dimen name="loading_size">56dp</dimen>
+    <dimen name="icon_size_60">60dp</dimen>
+    <dimen name="margin_1p5">12dp</dimen>
+    <dimen name="margin_1">8dp</dimen>
+    <dimen name="padding_1p5">12dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+    <dimen name="margin_2">16dp</dimen>
+    <dimen name="margin_3">24dp</dimen>
+    <dimen name="margin_3p5">30dp</dimen>
+    <dimen name="size_125">70dp</dimen>
+    <dimen name="padding_0p5">4dp</dimen>
+    <dimen name="icon_size_45">45dp</dimen>
+    <dimen name="margin_0p5">4dp</dimen>
+    <dimen name="popup_width">320dp</dimen>
+    <dimen name="popup_height">350dp</dimen>
+    <dimen name="dialog_max_size">350dp</dimen>
+    <dimen name="bookmark_item_icon_size">24dp</dimen>
+    <dimen name="margin_4">32dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="grid_insets">0dp</dimen>
+    <dimen name="card_insets">4dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
 </resources>

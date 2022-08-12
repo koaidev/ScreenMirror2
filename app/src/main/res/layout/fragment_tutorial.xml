@@ -8,6 +8,7 @@
     android:background="#121213"
     tools:context=".fragment.TutorialFragment">
 
+
     <TextView
         android:id="@+id/txt_position"
         android:layout_width="@dimen/_30sdp"

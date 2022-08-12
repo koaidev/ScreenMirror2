@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    tools:context=".ui.feature.feedback.FeedbackFragment">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/layout_tool_bar" />
+
+    <TextView
+        android:id="@+id/tvFeedbackTitleInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_marginEnd="16dp"
+        android:text="@string/text_feedback_desc"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_type"
+        android:textColor="#a8a8a8"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFeedbackTitleInfo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_1p5"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/padding_1"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <CheckBox
+            android:id="@+id/cbBrowse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCantBrowse"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ripple_rectangle_dark"
+            android:gravity="center_vertical"
+            android:text="@string/txt_cant_browse"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cbBrowse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbBrowse"
+            app:layout_constraintTop_toTopOf="@+id/cbBrowse" />
+
+        <EditText
+            android:id="@+id/edtLinkBrowse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1"
+            android:layout_marginEnd="@dimen/padding_2"
+            android:background="@drawable/bg_stroke_gray"
+            android:hint="@string/txt_please_the_website"
+            android:padding="@dimen/padding_1p5"
+            android:textSize="14dp"
+            android:visibility="gone"
+            android:maxHeight="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvCantBrowse"
+            app:layout_constraintTop_toBottomOf="@+id/cbBrowse"
+            tools:visibility="visible" />
+
+        <CheckBox
+            android:id="@+id/cbNoDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtLinkBrowse" />
+
+        <TextView
+            android:id="@+id/tvNoDownload"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/ripple_rectangle_dark"
+            android:gravity="center_vertical"
+            android:text="@string/txt_no_download"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cbNoDownload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbNoDownload"
+            app:layout_constraintTop_toTopOf="@+id/cbNoDownload" />
+
+        <EditText
+            android:id="@+id/edtLink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1"
+            android:layout_marginEnd="@dimen/padding_2"
+            android:background="@drawable/bg_stroke_gray"
+            android:hint="@string/txt_please_the_website"
+            android:padding="@dimen/padding_1p5"
+            android:textSize="14dp"
+            android:visibility="gone"
+            android:maxHeight="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvNoDownload"
+            app:layout_constraintTop_toBottomOf="@+id/cbNoDownload"
+            tools:visibility="visible" />
+
+
+        <CheckBox
+            android:id="@+id/cbTooManyAds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtLink" />
+
+        <TextView
+            android:id="@+id/tvTooManyAds"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/ripple_rectangle_dark"
+            android:gravity="center_vertical"
+            android:text="@string/txt_too_many_ads"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cbTooManyAds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbTooManyAds"
+            app:layout_constraintTop_toTopOf="@+id/cbTooManyAds" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_m3"
+        app:layout_constraintBottom_toTopOf="@+id/btCancel" />
+
+    <TextView
+        android:id="@+id/btCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_btn_setting"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="@string/txt_cancel"
+        android:textAllCaps="true"
+        android:textColor="@color/blue_m11"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btOk"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/btOk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_btn_setting"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="@string/txt_ok"
+        android:textAllCaps="true"
+        android:textColor="@color/blue_m11"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btCancel" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/gray_m3"
+        app:layout_constraintBottom_toBottomOf="@id/btCancel"
+        app:layout_constraintEnd_toEndOf="@id/btCancel"
+        app:layout_constraintTop_toTopOf="@id/btCancel" />
+
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:id="@+id/my_template"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gnt_template_type="@layout/gnt_small_template_view_custom"
+        app:layout_constraintBottom_toTopOf="@+id/btOk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

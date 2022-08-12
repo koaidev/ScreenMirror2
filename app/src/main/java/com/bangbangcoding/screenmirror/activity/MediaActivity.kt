@@ -2,6 +2,7 @@ package com.bangbangcoding.screenmirror.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.bangbangcoding.screenmirror.R
 import com.bangbangcoding.screenmirror.adapter.MediaPagerAdapter
 import com.bangbangcoding.screenmirror.databinding.ActivityMediaBinding
@@ -19,6 +20,7 @@ class MediaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMediaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
 
         binding = ActivityMediaBinding.inflate(layoutInflater)

@@ -2,10 +2,9 @@
 <layout>
 
     <data>
-
         <variable
             name="media"
-            type="com.bangbangcoding.screenmirror.model.MediaItem" />
+            type="com.bangbangcoding.screenmirror.db.model.group.GeneralItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

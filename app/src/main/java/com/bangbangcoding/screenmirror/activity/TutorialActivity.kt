@@ -1,9 +1,10 @@
 package com.bangbangcoding.screenmirror.activity
 
-import android.graphics.drawable.Drawable
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.bangbangcoding.screenmirror.R
@@ -11,17 +12,32 @@ import com.bangbangcoding.screenmirror.adapter.TutorialAdapter
 import com.bangbangcoding.screenmirror.databinding.ActivityTutorialBinding
 import com.bangbangcoding.screenmirror.utils.Common
 import com.bangbangcoding.screenmirror.utils.SharePreference
-import com.bangbangcoding.screenmirror.viewmodel.TutorialViewModel
+import com.bangbangcoding.screenmirror.db.viewmodel.TutorialViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 class TutorialActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTutorialBinding
     private lateinit var viewModel: TutorialViewModel
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
         binding = ActivityTutorialBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val isStart = intent.getBooleanExtra("fromMain", true)
+        if(isStart){
+            binding.toolBar.visibility = View.VISIBLE
+        }else{
+            binding.toolBar.visibility = View.GONE
+        }
+        val toolBar = binding.toolBar
+        setSupportActionBar(toolBar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = resources.getString(R.string.tutorial)
+
         viewModel = ViewModelProvider(this)[TutorialViewModel::class.java]
 
         binding.viewPager.adapter = TutorialAdapter(this)
@@ -61,6 +77,10 @@ class TutorialActivity : AppCompatActivity() {
         }
         binding.viewPager.setPageTransformer(DepthPageTransformer())
 
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
 

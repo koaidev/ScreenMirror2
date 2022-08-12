@@ -1,8 +1,11 @@
 package com.bangbangcoding.screenmirror.activity
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Build.VERSION.SDK_INT
@@ -13,16 +16,18 @@ import android.view.MotionEvent
 import android.view.View.OnTouchListener
 import android.widget.PopupWindow
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bangbangcoding.screenmirror.R
 import com.bangbangcoding.screenmirror.databinding.ActivityMainBinding
+import com.bangbangcoding.screenmirror.databinding.OopsDialogBinding
 import com.bangbangcoding.screenmirror.databinding.PopupSettingBinding
-import com.bangbangcoding.screenmirror.easybrowser.page.browser.BrowserActivity
 import com.bangbangcoding.screenmirror.livedata.ConnectionLiveData
 import com.bangbangcoding.screenmirror.utils.Common
 import com.bangbangcoding.screenmirror.utils.PERMISSION_ALL
 import com.bangbangcoding.screenmirror.utils.PermissionHelper
+import com.bangbangcoding.screenmirror.web.ui.WebActivity
 import com.google.android.material.snackbar.Snackbar
 import com.shashank.sony.fancytoastlib.FancyToast
 
@@ -31,7 +36,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -70,16 +77,18 @@ class MainActivity : AppCompatActivity() {
          * Handle click event
          */
         binding.mirror.setOnClickListener {
-            Common.showErrorFullMsg(this, "Chưa xử lý sự kiện này đâu nhé!")
+            showNotSupportDialog()
         }
         binding.cardMedia.setOnClickListener {
             Common.openActivity(this@MainActivity, MediaActivity::class.java)
         }
         binding.cardWeb.setOnClickListener {
-            Common.openActivity(this@MainActivity, BrowserActivity::class.java)
+            Common.openActivity(this@MainActivity, WebActivity::class.java)
         }
         binding.cardGuide.setOnClickListener {
-            Common.openActivity(this@MainActivity, TutorialActivity::class.java)
+            val intent = Intent(this@MainActivity, TutorialActivity::class.java)
+            intent.putExtra("fromMain", true)
+            startActivity(intent)
         }
         binding.cardDocument.setOnClickListener {
             if (SDK_INT >= Build.VERSION_CODES.R) {
@@ -101,6 +110,18 @@ class MainActivity : AppCompatActivity() {
         /**
          * End handle click event
          */
+    }
+
+    private fun showNotSupportDialog() {
+        val oopsBinding = OopsDialogBinding.inflate(layoutInflater)
+        val dialogNotSupport = Dialog(this, R.style.MyDialog)
+        dialogNotSupport.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialogNotSupport.setContentView(oopsBinding.root)
+        dialogNotSupport.setCanceledOnTouchOutside(false)
+        dialogNotSupport.show()
+        oopsBinding.btnYes.setOnClickListener{
+            dialogNotSupport.dismiss()
+        }
     }
 
     override fun onResume() {

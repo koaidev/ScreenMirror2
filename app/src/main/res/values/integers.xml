@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="v5_animation_duration">250</integer>
+    <integer name="v5_transition_duration_in">300</integer>
+    <integer name="v5_transition_duration_out">230</integer>
+    <integer name="v5_transition_delay">20</integer>
+    <integer name="v5_transition_delay_out">50</integer>
+</resources>

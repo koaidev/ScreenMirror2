@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:gravity="center"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.bangbangcoding.screenmirror.web.ui.player.widget.CountDownDigit
+                android:id="@+id/firstDigitMinute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+            <com.bangbangcoding.screenmirror.web.ui.player.widget.CountDownDigit
+                android:id="@+id/secondDigitMinute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/firstDigitMinute"
+                android:layout_toRightOf="@+id/firstDigitMinute"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:padding="2dp"
+            android:text=":" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.bangbangcoding.screenmirror.web.ui.player.widget.CountDownDigit
+                android:id="@+id/firstDigitSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+            <com.bangbangcoding.screenmirror.web.ui.player.widget.CountDownDigit
+                android:id="@+id/secondDigitSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/firstDigitSecond"
+                android:layout_toRightOf="@+id/firstDigitSecond"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

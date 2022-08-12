@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_ads"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="always"
+        android:title="@string/txt_menu_ads" />
+
+    <item
+        android:id="@+id/navigation_new_tab"
+        android:icon="@drawable/ic_menu_3416"
+        android:title="@string/txt_menu_new_tab" />
+
+    <item
+        android:id="@+id/navigation_share"
+        android:icon="@drawable/ic_menu_3160"
+        android:title="@string/txt_menu_share" />
+
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_menu_3415"
+        android:title="@string/txt_menu_history" />
+
+    <item
+        android:id="@+id/navigation_copy_link"
+        android:icon="@drawable/ic_menu_3418"
+        android:title="@string/txt_menu_copy_link" />
+
+    <item
+        android:id="@+id/navigation_bookmarks"
+        android:icon="@drawable/ic_menu_delete"
+        android:title="@string/txt_menu_bookmarks" />
+
+    <item
+        android:id="@+id/navigation_add_bookmark"
+        android:icon="@drawable/ic_menu_3415"
+        android:title="@string/txt_menu_add_bookmark" />
+
+    <item
+        android:id="@+id/navigation_desktop_site"
+        android:icon="@drawable/ic_menu_3418"
+        android:title="@string/txt_menu_desktop_site" />
+
+    <item
+        android:id="@+id/navigation_share_with_friends"
+        android:icon="@drawable/ic_menu_delete"
+        android:title="@string/txt_menu_share_with_friends" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_menu_3415"
+        android:title="@string/txt_menu_setting" />
+</menu>
