@@ -15,11 +15,14 @@ import com.bangbangcoding.screenmirror.db.model.DocumentItem
 
 
 class DocumentAdapter(
-    val documents: ArrayList<DocumentItem> = arrayListOf(),
+
     val activity: Activity
 ) :
     RecyclerView.Adapter<DocumentAdapter.DocumentVH>() {
     class DocumentVH(val binding: ItemDocumentBinding) : RecyclerView.ViewHolder(binding.root)
+
+    private var documents: ArrayList<DocumentItem> = arrayListOf()
+    private var documentsLits: ArrayList<DocumentItem> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DocumentVH {
         return DocumentVH(
@@ -64,4 +67,26 @@ class DocumentAdapter(
     }
 
     override fun getItemCount(): Int = documents.size
+
+    fun searchView(vararg type: ItemViewType) {
+        val listSearch =  documentsLits.filter { documentItem ->
+            check(documentItem, *type)
+        }
+        documents.clear()
+        documents.addAll(listSearch)
+        notifyDataSetChanged()
+
+    }
+    fun updateData(documentsLits : ArrayList<DocumentItem>){
+       this.documentsLits = documentsLits
+        notifyDataSetChanged()
+    }
+
+    private fun check(documentItem: DocumentItem, vararg type: ItemViewType): Boolean{
+        return type.filter { it.value == documentItem.viewType }.isNotEmpty()
+    }
+}
+
+enum class ItemViewType(var value: Int) {
+    PDF(1), DOCX(2), DOC(3), XLS(4), PPT(5), TXT(6)
 }
