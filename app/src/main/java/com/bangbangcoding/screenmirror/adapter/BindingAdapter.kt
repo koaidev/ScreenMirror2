@@ -60,7 +60,7 @@ fun setDuration(textView: TextView, duration: Int?) {
         } else {
             "0$ses"
         }
-        textView.text = "$h:$m:$s"
+        textView.text = "${if (h.isNullOrEmpty()) "" else "$h:"}$m:$s"
 
         println("Duration: $duration")
         textView.visibility = View.VISIBLE
@@ -170,7 +170,7 @@ fun setImageDoc(imageView: ImageView, uri: Uri) {
     }
 }
 
-@BindingAdapter(value = ["enable_remove","visibility_remove"])
+@BindingAdapter(value = ["enable_remove", "visibility_remove"])
 fun setVisible(imageView: ImageView, enableRemove: Boolean, visibilityRemove: Boolean) {
     imageView.visibility = if (enableRemove && visibilityRemove) {
         View.VISIBLE

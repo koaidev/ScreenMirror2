@@ -255,12 +255,10 @@ class LightningDialogBuilder @Inject constructor(
         binding.tvShare.setOnClickListener {
             IntentUtils(activity).shareUrl(url, null)
             popupWindow.dismiss()
-            finish.invoke()
         }
         binding.tvCopyLink.setOnClickListener {
             clipboardManager.copyToClipboard(url)
             popupWindow.dismiss()
-            finish.invoke()
         }
         binding.tvDelete.setOnClickListener {
             historyModel.deleteHistoryEntry(url)
@@ -268,7 +266,6 @@ class LightningDialogBuilder @Inject constructor(
                 .observeOn(mainScheduler)
                 .subscribe(uiController::handleHistoryChange)
             popupWindow.dismiss()
-            finish.invoke()
         }
         popupWindow.contentView = binding.root
         popupWindow.width = Utils.dpToPixels(activity, 190)

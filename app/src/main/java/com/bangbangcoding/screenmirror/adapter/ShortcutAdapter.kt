@@ -1,6 +1,7 @@
 package com.bangbangcoding.screenmirror.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleOwner
@@ -12,12 +13,14 @@ import com.bangbangcoding.screenmirror.databinding.ItemShortcutBinding
 import com.bangbangcoding.screenmirror.db.model.entity.Shortcut
 import com.bangbangcoding.screenmirror.db.viewmodel.WebViewModel
 
-class ShortcutAdapter :
+class ShortcutAdapter(
+    val webViewModel: WebViewModel,
+    val lifecycleOwner: LifecycleOwner,
+    val callBack: CallBack
+) :
     ListAdapter<Shortcut, ShortcutAdapter.ShortcutVH>(ShortcutComparator()) {
     companion object {
-        lateinit var callback: CallBack
-        lateinit var webViewModel: WebViewModel
-        lateinit var lifecycleOwner: LifecycleOwner
+
     }
 
     class ShortcutVH(val binding: ItemShortcutBinding) : RecyclerView.ViewHolder(binding.root)
@@ -36,16 +39,18 @@ class ShortcutAdapter :
         val current = getItem(position)
         holder.binding.shortcut = current
         webViewModel.visibility.observe(lifecycleOwner) {
-            holder.binding.remove = it
+            if (position == 0)
+                holder.binding.remove = false
+            else holder.binding.remove = it
         }
         holder.binding.btnRemove.setOnClickListener {
-            callback.deleteShortcut(current)
+            callBack.deleteShortcut(current)
         }
         holder.binding.imageView10.setOnClickListener {
             if (position == 0) {
-                callback.addNewShortcut()
+                callBack.addNewShortcut()
             } else {
-                callback.onClickShortcut(current)
+                callBack.onClickShortcut(current)
             }
         }
     }

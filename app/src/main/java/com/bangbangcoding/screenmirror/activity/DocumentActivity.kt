@@ -44,38 +44,7 @@ class DocumentActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = resources.getString(R.string.document)
-        sharedPref = getSharedPreferences(
-            getString(R.string.preference_file_key), Context.MODE_PRIVATE
-        )
-        when (sharedPref.getString("current_document", resources.getString(R.string.all))) {
-            resources.getString(R.string.all) -> {
-                documentViewModel.getAllDocuments(application.contentResolver)
-
-            }
-            resources.getString(R.string.word) -> {
-                documentViewModel.getAllWords(application.contentResolver)
-
-            }
-            resources.getString(R.string.pdf) -> {
-                documentViewModel.getAllPdfs(application.contentResolver)
-
-            }
-            resources.getString(R.string.excel) -> {
-                documentViewModel.getAllExcels(application.contentResolver)
-
-            }
-            resources.getString(R.string.slide) -> {
-                documentViewModel.getAllPPts(application.contentResolver)
-
-            }
-            resources.getString(R.string.txt) -> {
-                documentViewModel.getAllTXTs(application.contentResolver)
-
-            }
-            else -> {
-                documentViewModel.getAllDocuments(application.contentResolver)
-            }
-        }
+        documentViewModel.getAllDocuments(application.contentResolver)
         setRCVDocument()
 
         binding.imgFilter.setOnClickListener {
@@ -99,32 +68,6 @@ class DocumentActivity : AppCompatActivity() {
             }
             false
         })
-
-        when (sharedPref.getString("current_document", resources.getString(R.string.all))) {
-            resources.getString(R.string.all) -> {
-                settingBinding.rdAll.isChecked = true
-            }
-            resources.getString(R.string.word) -> {
-                settingBinding.rdWord.isChecked = true
-
-            }
-            resources.getString(R.string.pdf) -> {
-                settingBinding.rdPdf.isChecked = true
-
-            }
-            resources.getString(R.string.excel) -> {
-                settingBinding.rdExcel.isChecked = true
-
-            }
-            resources.getString(R.string.slide) -> {
-                settingBinding.rdPptx.isChecked = true
-
-            }
-            resources.getString(R.string.txt) -> {
-                settingBinding.rdTxt.isChecked = true
-
-            }
-        }
 
         /**
          * ALL
@@ -167,7 +110,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckWord.observe(this) {
             if (it) {
-                documentViewModel.getAllWords(application.contentResolver)
+//                documentViewModel.getAllWords(application.contentResolver)
             }
         }
         /**
@@ -189,7 +132,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckPDF.observe(this) {
             if (it) {
-                documentViewModel.getAllPdfs(application.contentResolver)
+//                documentViewModel.getAllPdfs(application.contentResolver)
             }
         }
         /**
@@ -212,7 +155,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckXLS.observe(this) {
             if (it) {
-                documentViewModel.getAllExcels(application.contentResolver)
+//                documentViewModel.getAllExcels(application.contentResolver)
             }
         }
         /**
@@ -235,7 +178,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckPPT.observe(this) {
             if (it) {
-                documentViewModel.getAllPPts(application.contentResolver)
+//                documentViewModel.getAllPPts(application.contentResolver)
             }
         }
         /**
@@ -258,7 +201,7 @@ class DocumentActivity : AppCompatActivity() {
 
         documentViewModel.isCheckTxt.observe(this) {
             if (it) {
-                documentViewModel.getAllTXTs(application.contentResolver)
+//                documentViewModel.getAllTXTs(application.contentResolver)
             }
         }
         binding.imgReadFile.setOnClickListener { openDirectory() }
@@ -291,10 +234,8 @@ class DocumentActivity : AppCompatActivity() {
         val documentAdapter = DocumentAdapter(activity = this@DocumentActivity)
         binding.rcvDocument.adapter = documentAdapter
         documentViewModel.documentItems.observe(this) {
-            documentAdapter.documents.clear()
-            documentAdapter.documents.addAll(it)
-            documentAdapter.notifyDataSetChanged()
-            binding.txtNumberFile.text = "${it.size} Files"
+            documentAdapter.updateData(it)
+            binding.txtNumberFile.text = "${if (it.size> 0)it.size else 0} Files"
             if (it.size == 0) {
                 binding.txtNoDocumentFound.visibility = View.VISIBLE
                 binding.rcvDocument.visibility = View.GONE
@@ -322,7 +263,7 @@ class DocumentActivity : AppCompatActivity() {
             sizeText.plus(total).plus(" KB")
         }
 
-        binding.txtNumberSize.text = sizeText
+        binding.txtNumberSize.text = if (documents.size > 0) sizeText else "0 MB"
     }
 
     override fun onSupportNavigateUp(): Boolean {

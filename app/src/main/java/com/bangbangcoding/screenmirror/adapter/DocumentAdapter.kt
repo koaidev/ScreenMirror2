@@ -70,20 +70,16 @@ class DocumentAdapter(
 
     fun searchView(vararg type: ItemViewType) {
         val listSearch =  documentsLits.filter { documentItem ->
-            check(documentItem, *type)
+            type.filter { it.value == documentItem.viewType }.isNotEmpty()
         }
-        documents.clear()
-        documents.addAll(listSearch)
+        documents= listSearch as ArrayList<DocumentItem>
         notifyDataSetChanged()
 
     }
     fun updateData(documentsLits : ArrayList<DocumentItem>){
        this.documentsLits = documentsLits
+        documents = documentsLits
         notifyDataSetChanged()
-    }
-
-    private fun check(documentItem: DocumentItem, vararg type: ItemViewType): Boolean{
-        return type.filter { it.value == documentItem.viewType }.isNotEmpty()
     }
 }
 

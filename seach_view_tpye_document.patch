@@ -1,0 +1,930 @@
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+new file mode 100644
+--- /dev/null	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
++++ b/.idea/deploymentTargetDropDown.xml	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetDropDown">
++    <runningDeviceTargetSelectedWithDropDown>
++      <Target>
++        <type value="RUNNING_DEVICE_TARGET" />
++        <deviceKey>
++          <Key>
++            <type value="SERIAL_NUMBER" />
++            <value value="c55d32a7" />
++          </Key>
++        </deviceKey>
++      </Target>
++    </runningDeviceTargetSelectedWithDropDown>
++    <timeTargetWasSelectedWithDropDown value="2022-08-11T14:22:36.910867900Z" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/.idea/misc.xml	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -4,6 +4,13 @@
+     <option name="filePathToZoomLevelMap">
+       <map>
+         <entry key="../../../../layout/custom_preview.xml" value="0.13601823708206687" />
++        <entry key="..\:/Users/anhna/OneDrive/Desktop/seen/ScreenMirror2/app/src/main/res/layout/activity_browser.xml" value="0.35052083333333334" />
++        <entry key="..\:/Users/anhna/OneDrive/Desktop/seen/ScreenMirror2/app/src/main/res/layout/activity_document.xml" value="0.35052083333333334" />
++        <entry key="..\:/Users/anhna/OneDrive/Desktop/seen/ScreenMirror2/app/src/main/res/layout/fragment_media.xml" value="0.35052083333333334" />
++        <entry key="..\:/Users/anhna/OneDrive/Desktop/seen/ScreenMirror2/app/src/main/res/layout/item_document.xml" value="0.35052083333333334" />
++        <entry key="..\:/Users/anhna/OneDrive/Desktop/seen/ScreenMirror2/app/src/main/res/layout/item_media.xml" value="0.14722222222222223" />
++        <entry key="..\:/Users/anhna/OneDrive/Desktop/seen/ScreenMirror2/app/src/main/res/layout/layout_grid_item.xml" value="0.35052083333333334" />
++        <entry key="..\:/Users/anhna/OneDrive/Desktop/seen/ScreenMirror2/app/src/main/res/layout/layout_new_tab.xml" value="0.35052083333333334" />
+         <entry key="app/src/main/res/drawable-v24/greydivider.xml" value="0.1585" />
+         <entry key="app/src/main/res/drawable-v24/loading_page_progress_status.xml" value="0.1585" />
+         <entry key="app/src/main/res/drawable-v24/shapebgsearch.xml" value="0.1585" />
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
++++ b/.idea/vcs.xml	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/bangbangcoding/screenmirror/activity/DocumentActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bangbangcoding/screenmirror/activity/DocumentActivity.kt b/app/src/main/java/com/bangbangcoding/screenmirror/activity/DocumentActivity.kt
+--- a/app/src/main/java/com/bangbangcoding/screenmirror/activity/DocumentActivity.kt	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/app/src/main/java/com/bangbangcoding/screenmirror/activity/DocumentActivity.kt	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -76,7 +76,7 @@
+ 
+         documentViewModel.isCheckWord.observe(this) {
+             if (it) {
+-                documentViewModel.getAllWords(application.contentResolver)
++//                documentViewModel.getAllWords(application.contentResolver)
+             }
+         }
+         /**
+@@ -101,7 +101,7 @@
+ 
+         documentViewModel.isCheckPDF.observe(this) {
+             if (it) {
+-                documentViewModel.getAllPdfs(application.contentResolver)
++//                documentViewModel.getAllPdfs(application.contentResolver)
+             }
+         }
+         /**
+@@ -127,7 +127,7 @@
+ 
+         documentViewModel.isCheckXLS.observe(this) {
+             if (it) {
+-                documentViewModel.getAllExcels(application.contentResolver)
++//                documentViewModel.getAllExcels(application.contentResolver)
+             }
+         }
+         /**
+@@ -153,7 +153,7 @@
+ 
+         documentViewModel.isCheckPPT.observe(this) {
+             if (it) {
+-                documentViewModel.getAllPPts(application.contentResolver)
++//                documentViewModel.getAllPPts(application.contentResolver)
+             }
+         }
+         /**
+@@ -179,29 +179,26 @@
+ 
+         documentViewModel.isCheckTxt.observe(this) {
+             if (it) {
+-                documentViewModel.getAllTXTs(application.contentResolver)
++//                documentViewModel.getAllTXTs(application.contentResolver)
+             }
+         }
+     }
+ 
+ 
+     private fun setRCVDocument() {
+-
+         val documentAdapter = DocumentAdapter(activity = this@DocumentActivity)
+         binding.rcvDocument.adapter = documentAdapter
+         documentViewModel.documentItems.observe(this) {
+-            documentAdapter.documents.clear()
+-            documentAdapter.documents.addAll(it)
+-            documentAdapter.notifyDataSetChanged()
+-            binding.txtNumberFile.text = "${it.size} Files"
++            documentAdapter.updateData(it)
++            binding.txtNumberFile.text = if(it.size> 0)"${it.size} Files" else "0 Files"
+             checkTotalSize(it)
+         }
+     }
+ 
+     private fun checkTotalSize(documents: ArrayList<DocumentItem>) {
+         var total = 0
+-        for (item in documents) {
+-            total += item.size / 1000
++        documents.forEach{
++            total += it.size?.div(1000) ?: 0
+         }
+         var sizeText = ""
+         sizeText = if (total > 1024) {
+@@ -214,7 +211,7 @@
+             sizeText.plus(total).plus(" KB")
+         }
+ 
+-        binding.txtNumberSize.text = sizeText
++        binding.txtNumberSize.text = if (documents.size > 0) sizeText else "0 MB"
+     }
+ 
+     override fun onSupportNavigateUp(): Boolean {
+Index: app/src/main/java/com/bangbangcoding/screenmirror/adapter/DocumentAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bangbangcoding/screenmirror/adapter/DocumentAdapter.kt b/app/src/main/java/com/bangbangcoding/screenmirror/adapter/DocumentAdapter.kt
+--- a/app/src/main/java/com/bangbangcoding/screenmirror/adapter/DocumentAdapter.kt	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/app/src/main/java/com/bangbangcoding/screenmirror/adapter/DocumentAdapter.kt	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -6,7 +6,6 @@
+ import android.view.LayoutInflater
+ import android.view.ViewGroup
+ import android.webkit.MimeTypeMap
+-import android.webkit.WebView
+ import androidx.databinding.DataBindingUtil
+ import androidx.recyclerview.widget.RecyclerView
+ import com.bangbangcoding.screenmirror.R
+@@ -15,12 +14,15 @@
+ 
+ 
+ class DocumentAdapter(
+-    val documents: ArrayList<DocumentItem> = arrayListOf(),
++
+     val activity: Activity
+ ) :
+     RecyclerView.Adapter<DocumentAdapter.DocumentVH>() {
+     class DocumentVH(val binding: ItemDocumentBinding) : RecyclerView.ViewHolder(binding.root)
+ 
++    private var documents: ArrayList<DocumentItem> = arrayListOf()
++    private var documentsLits: ArrayList<DocumentItem> = arrayListOf()
++
+     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DocumentVH {
+         return DocumentVH(
+             DataBindingUtil.inflate(
+@@ -39,11 +41,12 @@
+                 val intent = Intent(Intent.ACTION_VIEW)
+                 val cR: ContentResolver = activity.contentResolver
+                 val mime = MimeTypeMap.getSingleton()
+-                val mimeType = mime.getExtensionFromMimeType(documents[position].uriDoc?.let { it1 ->
+-                    cR.getType(
+-                        it1
+-                    )
+-                })
++                val mimeType =
++                    mime.getExtensionFromMimeType(documents[position].uriDoc?.let { it1 ->
++                        cR.getType(
++                            it1
++                        )
++                    })
+                 intent.setDataAndType(
+                     documents[position].uriDoc,
+                     "application/$mimeType"
+@@ -62,4 +65,26 @@
+     }
+ 
+     override fun getItemCount(): Int = documents.size
++
++    fun searchView(vararg type: ItemViewType) {
++        val listSearch =  documentsLits.filter { documentItem ->
++            check(documentItem, *type)
++        }
++        documents.clear()
++        documents.addAll(listSearch)
++        notifyDataSetChanged()
++
++    }
++    fun updateData(documentsLits : ArrayList<DocumentItem>){
++       this.documentsLits = documentsLits
++        notifyDataSetChanged()
++    }
++
++    private fun check(documentItem: DocumentItem, vararg type: ItemViewType): Boolean{
++        return type.filter { it.value == documentItem.viewType }.isNotEmpty()
++    }
++}
++
++enum class ItemViewType(var value: Int) {
++    PDF(1), DOCX(2), DOC(3), XLS(4), PPT(5), TXT(6)
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/bangbangcoding/screenmirror/fragment/MediaContentFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bangbangcoding/screenmirror/fragment/MediaContentFragment.kt b/app/src/main/java/com/bangbangcoding/screenmirror/fragment/MediaContentFragment.kt
+--- a/app/src/main/java/com/bangbangcoding/screenmirror/fragment/MediaContentFragment.kt	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/app/src/main/java/com/bangbangcoding/screenmirror/fragment/MediaContentFragment.kt	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -47,7 +47,6 @@
+                 mediaAdapter.medias.clear()
+                 val medias = it
+                 mediaAdapter.medias.addAll(medias)
+-
+                 mediaAdapter.notifyDataSetChanged()
+             }
+         }
+Index: app/src/main/java/com/bangbangcoding/screenmirror/model/Document.kt
+===================================================================
+diff --git a/app/src/main/java/com/bangbangcoding/screenmirror/model/Document.kt b/app/src/main/java/com/bangbangcoding/screenmirror/model/Document.kt
+--- a/app/src/main/java/com/bangbangcoding/screenmirror/model/Document.kt	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/app/src/main/java/com/bangbangcoding/screenmirror/model/Document.kt	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -2,15 +2,15 @@
+ 
+ import android.net.Uri
+ import androidx.annotation.Keep
++import com.bangbangcoding.screenmirror.adapter.ItemViewType
+ 
+ @Keep
+ data class DocumentItem(
+-    @Keep val id: Long,
+-    @Keep val title: String,
+-    @Keep val dateCreated: Long,
+-    @Keep val size: Int,
+-    @Keep val type: String,
+-    @Keep val uriDoc: Uri
+-) {
+-    constructor() : this(0, "", 0, 0, "", Uri.EMPTY)
+-}
+\ No newline at end of file
++    @Keep var id: Long?  = 0,
++    @Keep var viewType: Int? = ItemViewType.TXT.value,
++    @Keep val title: String? = null,
++    @Keep val dateCreated: Long? = 0,
++    @Keep val size: Int? = 0,
++    @Keep val type: String? = null,
++    @Keep val uriDoc: Uri? = null
++)
+\ No newline at end of file
+Index: app/src/main/java/com/bangbangcoding/screenmirror/viewmodel/DocumentViewModel.kt
+===================================================================
+diff --git a/app/src/main/java/com/bangbangcoding/screenmirror/viewmodel/DocumentViewModel.kt b/app/src/main/java/com/bangbangcoding/screenmirror/viewmodel/DocumentViewModel.kt
+--- a/app/src/main/java/com/bangbangcoding/screenmirror/viewmodel/DocumentViewModel.kt	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/app/src/main/java/com/bangbangcoding/screenmirror/viewmodel/DocumentViewModel.kt	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -2,7 +2,6 @@
+ 
+ import android.content.ContentResolver
+ import android.content.ContentUris
+-import android.content.Context
+ import android.net.Uri
+ import android.provider.MediaStore
+ import android.webkit.MimeTypeMap
+@@ -10,10 +9,10 @@
+ import androidx.lifecycle.MutableLiveData
+ import androidx.lifecycle.ViewModel
+ import androidx.lifecycle.viewModelScope
++import com.bangbangcoding.screenmirror.adapter.ItemViewType
+ import com.bangbangcoding.screenmirror.model.DocumentItem
+ import kotlinx.coroutines.Dispatchers
+ import kotlinx.coroutines.launch
+-import java.io.File
+ 
+ 
+ class DocumentViewModel : ViewModel() {
+@@ -27,277 +26,277 @@
+     val documentItems: LiveData<ArrayList<DocumentItem>>
+         get() = _documentItems
+ 
+-    fun getAllPdfs(contentResolver: ContentResolver) {
+-        val mimePdf = "'application/pdf'"
+-        val projection = arrayOf(
+-            MediaStore.Files.FileColumns._ID,
+-            MediaStore.Files.FileColumns.SIZE,
+-            MediaStore.Files.FileColumns.DATE_ADDED,
+-            MediaStore.Files.FileColumns.MIME_TYPE,
+-            MediaStore.Files.FileColumns.TITLE
+-        )
+-        val selection = (
+-                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimePdf)
+-
+-        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
+-        viewModelScope.launch(Dispatchers.Main) {
+-            contentResolver.query(
+-                queryUri!!,
+-                projection,
+-                selection,
+-                null,
+-                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
+-            )?.use { cursor ->
+-                val documentFiles = arrayListOf<DocumentItem>()
+-                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
+-                val nameColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
+-                val typeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
+-                val dateAddColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
+-                val sizeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
+-                while (cursor.moveToNext()) {
+-                    val id = cursor.getLong(idColumn)
+-                    val name = cursor.getString(nameColumn)
+-                    val size = cursor.getInt(sizeColumn)
+-                    val type = cursor.getString(typeColumn)
+-                    val dateAdd = cursor.getLong(dateAddColumn)
+-                    val contentUri: Uri = ContentUris.withAppendedId(
+-                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
+-                        id
+-                    )
+-                    println("Document: $name")
+-                    // Stores column values and the contentUri in a local object
+-                    // that represents the media file.
+-                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
+-                    _documentItems.value = documentFiles
+-                }
+-            }
+-        }
+-    }
+-
+-    fun getAllWords(contentResolver: ContentResolver) {
+-        val mimeWord = "'application/msword'"
+-        val mimePPt = "'application/vnd.openxmlformats-officedocument.wordprocessingml.document'"
+-
+-        val projection = arrayOf(
+-            MediaStore.Files.FileColumns._ID,
+-            MediaStore.Files.FileColumns.SIZE,
+-            MediaStore.Files.FileColumns.DATE_ADDED,
+-            MediaStore.Files.FileColumns.MIME_TYPE,
+-            MediaStore.Files.FileColumns.TITLE
+-        )
+-        val selection = (
+-                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimeWord + " OR " + MediaStore.Files.FileColumns.MIME_TYPE +"=" +mimePPt)
+-
+-        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
+-        viewModelScope.launch(Dispatchers.Main) {
+-            contentResolver.query(
+-                queryUri!!,
+-                projection,
+-                selection,
+-                null,
+-                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
+-            )?.use { cursor ->
+-                val documentFiles = arrayListOf<DocumentItem>()
+-                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
+-                val nameColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
+-                val typeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
+-                val dateAddColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
+-                val sizeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
+-                while (cursor.moveToNext()) {
+-                    val id = cursor.getLong(idColumn)
+-                    val name = cursor.getString(nameColumn)
+-                    val size = cursor.getInt(sizeColumn)
+-                    val type = cursor.getString(typeColumn)
+-                    val dateAdd = cursor.getLong(dateAddColumn)
+-                    val contentUri: Uri = ContentUris.withAppendedId(
+-                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
+-                        id
+-                    )
+-                    println("Document: $name")
+-                    // Stores column values and the contentUri in a local object
+-                    // that represents the media file.
+-                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
+-                    _documentItems.value = documentFiles
+-                }
+-            }
+-        }
+-    }
+-
+-    fun getAllExcels(contentResolver: ContentResolver) {
+-        val mimeXls = "'application/vnd.ms-excel'"
+-
+-
+-        val projection = arrayOf(
+-            MediaStore.Files.FileColumns._ID,
+-            MediaStore.Files.FileColumns.SIZE,
+-            MediaStore.Files.FileColumns.DATE_ADDED,
+-            MediaStore.Files.FileColumns.MIME_TYPE,
+-            MediaStore.Files.FileColumns.TITLE
+-        )
+-        val selection = (
+-                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimeXls)
+-
+-        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
+-        viewModelScope.launch(Dispatchers.Main) {
+-            contentResolver.query(
+-                queryUri!!,
+-                projection,
+-                selection,
+-                null,
+-                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
+-            )?.use { cursor ->
+-                val documentFiles = arrayListOf<DocumentItem>()
+-                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
+-                val nameColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
+-                val typeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
+-                val dateAddColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
+-                val sizeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
+-                while (cursor.moveToNext()) {
+-                    val id = cursor.getLong(idColumn)
+-                    val name = cursor.getString(nameColumn)
+-                    val size = cursor.getInt(sizeColumn)
+-                    val type = cursor.getString(typeColumn)
+-                    val dateAdd = cursor.getLong(dateAddColumn)
+-                    val contentUri: Uri = ContentUris.withAppendedId(
+-                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
+-                        id
+-                    )
+-                    println("Document: $name")
+-                    // Stores column values and the contentUri in a local object
+-                    // that represents the media file.
+-                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
+-                    _documentItems.value = documentFiles
+-                }
+-            }
+-        }
+-    }
+-
+-    fun getAllPPts(contentResolver: ContentResolver) {
+-        val mimePPt = "'application/vnd.openxmlformats-officedocument.presentationml.presentation'"
+-
+-        val projection = arrayOf(
+-            MediaStore.Files.FileColumns._ID,
+-            MediaStore.Files.FileColumns.SIZE,
+-            MediaStore.Files.FileColumns.DATE_ADDED,
+-            MediaStore.Files.FileColumns.MIME_TYPE,
+-            MediaStore.Files.FileColumns.TITLE
+-        )
+-        val selection = (
+-                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimePPt)
++//    fun getAllPdfs(contentResolver: ContentResolver) {
++//        val mimePdf = "'application/pdf'"
++//        val projection = arrayOf(
++//            MediaStore.Files.FileColumns._ID,
++//            MediaStore.Files.FileColumns.SIZE,
++//            MediaStore.Files.FileColumns.DATE_ADDED,
++//            MediaStore.Files.FileColumns.MIME_TYPE,
++//            MediaStore.Files.FileColumns.TITLE
++//        )
++//        val selection = (
++//                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimePdf)
++//
++//        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
++//        viewModelScope.launch(Dispatchers.Main) {
++//            contentResolver.query(
++//                queryUri!!,
++//                projection,
++//                selection,
++//                null,
++//                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
++//            )?.use { cursor ->
++//                val documentFiles = arrayListOf<DocumentItem>()
++//                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
++//                val nameColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
++//                val typeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
++//                val dateAddColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
++//                val sizeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
++//                while (cursor.moveToNext()) {
++//                    val id = cursor.getLong(idColumn)
++//                    val name = cursor.getString(nameColumn)
++//                    val size = cursor.getInt(sizeColumn)
++//                    val type = cursor.getString(typeColumn)
++//                    val dateAdd = cursor.getLong(dateAddColumn)
++//                    val contentUri: Uri = ContentUris.withAppendedId(
++//                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
++//                        id
++//                    )
++//                    println("Document: $name")
++//                    // Stores column values and the contentUri in a local object
++//                    // that represents the media file.
++//                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
++//                    _documentItems.value = documentFiles
++//                }
++//            }
++//        }
++//    }
++//
++//    fun getAllWords(contentResolver: ContentResolver) {
++//        val mimeWord = "'application/msword'"
++//        val mimePPt = "'application/vnd.openxmlformats-officedocument.wordprocessingml.document'"
++//
++//        val projection = arrayOf(
++//            MediaStore.Files.FileColumns._ID,
++//            MediaStore.Files.FileColumns.SIZE,
++//            MediaStore.Files.FileColumns.DATE_ADDED,
++//            MediaStore.Files.FileColumns.MIME_TYPE,
++//            MediaStore.Files.FileColumns.TITLE
++//        )
++//        val selection = (
++//                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimeWord + " OR " + MediaStore.Files.FileColumns.MIME_TYPE +"=" +mimePPt)
++//
++//        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
++//        viewModelScope.launch(Dispatchers.Main) {
++//            contentResolver.query(
++//                queryUri!!,
++//                projection,
++//                selection,
++//                null,
++//                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
++//            )?.use { cursor ->
++//                val documentFiles = arrayListOf<DocumentItem>()
++//                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
++//                val nameColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
++//                val typeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
++//                val dateAddColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
++//                val sizeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
++//                while (cursor.moveToNext()) {
++//                    val id = cursor.getLong(idColumn)
++//                    val name = cursor.getString(nameColumn)
++//                    val size = cursor.getInt(sizeColumn)
++//                    val type = cursor.getString(typeColumn)
++//                    val dateAdd = cursor.getLong(dateAddColumn)
++//                    val contentUri: Uri = ContentUris.withAppendedId(
++//                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
++//                        id
++//                    )
++//                    println("Document: $name")
++//                    // Stores column values and the contentUri in a local object
++//                    // that represents the media file.
++//                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
++//                    _documentItems.value = documentFiles
++//                }
++//            }
++//        }
++//    }
++//
++//    fun getAllExcels(contentResolver: ContentResolver) {
++//        val mimeXls = "'application/vnd.ms-excel'"
++//
++//        val projection = arrayOf(
++//            MediaStore.Files.FileColumns._ID,
++//            MediaStore.Files.FileColumns.SIZE,
++//            MediaStore.Files.FileColumns.DATE_ADDED,
++//            MediaStore.Files.FileColumns.MIME_TYPE,
++//            MediaStore.Files.FileColumns.TITLE
++//        )
++//        val selection = (
++//                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimeXls)
++//
++//        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
++//        viewModelScope.launch(Dispatchers.Main) {
++//            contentResolver.query(
++//                queryUri!!,
++//                projection,
++//                selection,
++//                null,
++//                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
++//            )?.use { cursor ->
++//                val documentFiles = arrayListOf<DocumentItem>()
++//                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
++//                val nameColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
++//                val typeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
++//                val dateAddColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
++//                val sizeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
++//                while (cursor.moveToNext()) {
++//                    val id = cursor.getLong(idColumn)
++//                    val name = cursor.getString(nameColumn)
++//                    val size = cursor.getInt(sizeColumn)
++//                    val type = cursor.getString(typeColumn)
++//                    val dateAdd = cursor.getLong(dateAddColumn)
++//                    val contentUri: Uri = ContentUris.withAppendedId(
++//                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
++//                        id
++//                    )
++//                    println("Document: $name")
++//                    // Stores column values and the contentUri in a local object
++//                    // that represents the media file.
++//                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
++//                    _documentItems.value = documentFiles
++//                }
++//            }
++//        }
++//    }
++//
++//    fun getAllPPts(contentResolver: ContentResolver) {
++//        val mimePPt = "'application/vnd.openxmlformats-officedocument.presentationml.presentation'"
++//
++//        val projection = arrayOf(
++//            MediaStore.Files.FileColumns._ID,
++//            MediaStore.Files.FileColumns.SIZE,
++//            MediaStore.Files.FileColumns.DATE_ADDED,
++//            MediaStore.Files.FileColumns.MIME_TYPE,
++//            MediaStore.Files.FileColumns.TITLE
++//        )
++//        val selection = (
++//                MediaStore.Files.FileColumns.MIME_TYPE + "=" + mimePPt)
++//
++//        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
++//        viewModelScope.launch(Dispatchers.Main) {
++//            contentResolver.query(
++//                queryUri!!,
++//                projection,
++//                selection,
++//                null,
++//                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
++//            )?.use { cursor ->
++//                val documentFiles = arrayListOf<DocumentItem>()
++//                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
++//                val nameColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
++//                val typeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
++//                val dateAddColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
++//                val sizeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
++//                while (cursor.moveToNext()) {
++//                    val id = cursor.getLong(idColumn)
++//                    val name = cursor.getString(nameColumn)
++//                    val size = cursor.getInt(sizeColumn)
++//                    val type = cursor.getString(typeColumn)
++//                    val dateAdd = cursor.getLong(dateAddColumn)
++//                    val contentUri: Uri = ContentUris.withAppendedId(
++//                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
++//                        id
++//                    )
++//                    println("Document: $name")
++//                    // Stores column values and the contentUri in a local object
++//                    // that represents the media file.
++//                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
++//                    _documentItems.value = documentFiles
++//                }
++//            }
++//        }
++//    }
++//
++//    fun getAllTXTs(contentResolver: ContentResolver) {
++//        val mimePPt = "'application/vnd.openxmlformats-officedocument.presentationml.presentation'"
++//        val mimeXls = "'application/vnd.ms-excel'"
++//        val mimeWord = "'application/msword'"
++//        val mimeWordX = "'application/vnd.openxmlformats-officedocument.wordprocessingml.document'"
++//        val mimePdf = "'application/pdf'"
++//
++//        val projection = arrayOf(
++//            MediaStore.Files.FileColumns._ID,
++//            MediaStore.Files.FileColumns.SIZE,
++//            MediaStore.Files.FileColumns.DATE_ADDED,
++//            MediaStore.Files.FileColumns.MIME_TYPE,
++//            MediaStore.Files.FileColumns.TITLE
++//        )
++//        val selection = (
++//                MediaStore.Files.FileColumns.MEDIA_TYPE + "=" + MediaStore.Files.FileColumns.MEDIA_TYPE_DOCUMENT + " AND "+
++//                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimePPt + " AND "+
++//                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimeWordX + " AND "+
++//                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimePdf + " AND "+
++//                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimeXls + " AND "+
++//                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimeWord
++//
++//                )
++//
++//        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
++//        viewModelScope.launch(Dispatchers.Main) {
++//            contentResolver.query(
++//                queryUri!!,
++//                projection,
++//                selection,
++//                null,
++//                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
++//            )?.use { cursor ->
++//                val documentFiles = arrayListOf<DocumentItem>()
++//                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
++//                val nameColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
++//                val typeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
++//                val dateAddColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
++//                val sizeColumn =
++//                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
++//                while (cursor.moveToNext()) {
++//                    val id = cursor.getLong(idColumn)
++//                    val name = cursor.getString(nameColumn)
++//                    val size = cursor.getInt(sizeColumn)
++//                    val type = cursor.getString(typeColumn)
++//                    val dateAdd = cursor.getLong(dateAddColumn)
++//                    val contentUri: Uri = ContentUris.withAppendedId(
++//                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
++//                        id
++//                    )
++//                    println("Document: $name")
++//                    // Stores column values and the contentUri in a local object
++//                    // that represents the media file.
++//                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
++//                    _documentItems.value = documentFiles
++//                }
++//            }
++//        }
++//    }
+ 
+-        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
+-        viewModelScope.launch(Dispatchers.Main) {
+-            contentResolver.query(
+-                queryUri!!,
+-                projection,
+-                selection,
+-                null,
+-                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
+-            )?.use { cursor ->
+-                val documentFiles = arrayListOf<DocumentItem>()
+-                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
+-                val nameColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
+-                val typeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
+-                val dateAddColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
+-                val sizeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
+-                while (cursor.moveToNext()) {
+-                    val id = cursor.getLong(idColumn)
+-                    val name = cursor.getString(nameColumn)
+-                    val size = cursor.getInt(sizeColumn)
+-                    val type = cursor.getString(typeColumn)
+-                    val dateAdd = cursor.getLong(dateAddColumn)
+-                    val contentUri: Uri = ContentUris.withAppendedId(
+-                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
+-                        id
+-                    )
+-                    println("Document: $name")
+-                    // Stores column values and the contentUri in a local object
+-                    // that represents the media file.
+-                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
+-                    _documentItems.value = documentFiles
+-                }
+-            }
+-        }
+-    }
+-
+-    fun getAllTXTs(contentResolver: ContentResolver) {
+-        val mimePPt = "'application/vnd.openxmlformats-officedocument.presentationml.presentation'"
+-        val mimeXls = "'application/vnd.ms-excel'"
+-        val mimeWord = "'application/msword'"
+-        val mimeWordX = "'application/vnd.openxmlformats-officedocument.wordprocessingml.document'"
+-        val mimePdf = "'application/pdf'"
+-
+-        val projection = arrayOf(
+-            MediaStore.Files.FileColumns._ID,
+-            MediaStore.Files.FileColumns.SIZE,
+-            MediaStore.Files.FileColumns.DATE_ADDED,
+-            MediaStore.Files.FileColumns.MIME_TYPE,
+-            MediaStore.Files.FileColumns.TITLE
+-        )
+-        val selection = (
+-                MediaStore.Files.FileColumns.MEDIA_TYPE + "=" + MediaStore.Files.FileColumns.MEDIA_TYPE_DOCUMENT + " AND "+
+-                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimePPt + " AND "+
+-                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimeWordX + " AND "+
+-                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimePdf + " AND "+
+-                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimeXls + " AND "+
+-                        MediaStore.Files.FileColumns.MIME_TYPE + "!=" + mimeWord
+-
+-                )
+-
+-        val queryUri = MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)
+-        viewModelScope.launch(Dispatchers.Main) {
+-            contentResolver.query(
+-                queryUri!!,
+-                projection,
+-                selection,
+-                null,
+-                MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
+-            )?.use { cursor ->
+-                val documentFiles = arrayListOf<DocumentItem>()
+-                val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
+-                val nameColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.TITLE)
+-                val typeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MIME_TYPE)
+-                val dateAddColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
+-                val sizeColumn =
+-                    cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns.SIZE)
+-                while (cursor.moveToNext()) {
+-                    val id = cursor.getLong(idColumn)
+-                    val name = cursor.getString(nameColumn)
+-                    val size = cursor.getInt(sizeColumn)
+-                    val type = cursor.getString(typeColumn)
+-                    val dateAdd = cursor.getLong(dateAddColumn)
+-                    val contentUri: Uri = ContentUris.withAppendedId(
+-                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL),
+-                        id
+-                    )
+-                    println("Document: $name")
+-                    // Stores column values and the contentUri in a local object
+-                    // that represents the media file.
+-                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
+-                    _documentItems.value = documentFiles
+-                }
+-            }
+-        }
+-    }
+ 
+     fun getAllDocuments(contentResolver: ContentResolver) {
+ 
+@@ -343,7 +342,14 @@
+                     println("Document: $type")
+                     // Stores column values and the contentUri in a local object
+                     // that represents the media file.
+-                    documentFiles.add(DocumentItem(id, name, dateAdd, size, type, contentUri))
++
++                    val mime = MimeTypeMap.getSingleton()
++                    val mimeType = mime.getExtensionFromMimeType(contentUri.let { it1 ->
++                        contentResolver.getType(
++                            it1
++                        )
++                    })
++                    documentFiles.add(DocumentItem(id, checkViewType(mimeType), name, dateAdd, size, type, contentUri))
+                     _documentItems.value = documentFiles
+                 }
+             }
+@@ -351,5 +357,16 @@
+ 
+     }
+ 
++    fun checkViewType(mimeType: String?):Int {
++        return when (mimeType) {
++            "pdf" -> ItemViewType.PDF.value
++            "docx" -> ItemViewType.DOCX.value
++            "doc" -> ItemViewType.DOC.value
++            "xls" -> ItemViewType.XLS.value
++            "ppt" -> ItemViewType.PPT.value
++            else -> ItemViewType.TXT.value
++        }
++    }
++
+ 
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_browser.xml
+===================================================================
+diff --git a/app/src/main/res/layout/activity_browser.xml b/app/src/main/res/layout/activity_browser.xml
+--- a/app/src/main/res/layout/activity_browser.xml	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/app/src/main/res/layout/activity_browser.xml	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -4,7 +4,7 @@
+     android:id="@+id/web_content_frame"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".page.browser.BrowserActivity">
++    >
+ 
+ 
+ </FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_document.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_document.xml b/app/src/main/res/layout/activity_document.xml
+--- a/app/src/main/res/layout/activity_document.xml	(revision cbf073108fa247e9c8956f0661eff1a9c3f92266)
++++ b/app/src/main/res/layout/activity_document.xml	(revision 8a146d711ebacb219d52232f24168c9ea99f01fe)
+@@ -82,7 +82,7 @@
+             android:layout_width="wrap_content"
+             android:layout_height="?actionBarSize"
+             android:gravity="center_vertical"
+-            android:text="4 File"
++            android:text="0 File"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+ 
+@@ -90,7 +90,7 @@
+             android:id="@+id/txt_number_size"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+-            android:text="65.40 MB"
++            android:text="0 MB"
+             android:textColor="#3AC56A"
+             app:layout_constraintBottom_toTopOf="@+id/rcv_document"
+             app:layout_constraintEnd_toEndOf="parent"

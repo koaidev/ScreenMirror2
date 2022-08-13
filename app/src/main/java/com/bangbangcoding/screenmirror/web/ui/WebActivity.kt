@@ -106,7 +106,7 @@ import org.greenrobot.eventbus.Subscribe
 import java.io.File
 import javax.inject.Inject
 
-class WebActivity : BaseActivity(), UIController, CallBack {
+class WebActivity : BaseActivity(), UIController {
     companion object {
         private const val TAG_BOOKMARK_FRAGMENT = "TAG_BOOKMARK_FRAGMENT"
         private const val TAG_TABS_FRAGMENT = "TAG_TABS_FRAGMENT"
@@ -352,10 +352,20 @@ class WebActivity : BaseActivity(), UIController, CallBack {
             }
         })
 
-        val adapter = ShortcutAdapter()
-        ShortcutAdapter.callback = this
-        ShortcutAdapter.webViewModel = webViewModel
-        ShortcutAdapter.lifecycleOwner = this
+        val adapter = ShortcutAdapter(webViewModel,this@WebActivity, object : CallBack{
+            override fun deleteShortcut(shortcut: Shortcut) {
+                webViewModel.deleteShortcut(shortcut)
+            }
+
+            override fun onClickShortcut(shortcut: Shortcut) {
+                searchTheWeb(shortcut.url)
+            }
+
+            override fun addNewShortcut() {
+              this@WebActivity.addNewShortcut()
+            }
+
+        })
         webViewModel.allShortcut.observe(this) {
             it?.let { adapter.submitList(it) }
         }
@@ -1046,7 +1056,7 @@ class WebActivity : BaseActivity(), UIController, CallBack {
         resetTabSelect()
         val currentView = tabsManager.currentTab
         currentView?.focus = true
-        updateUrl(currentView?.url, false)
+        updateUrl(currentView?.url, true)
         if (currentView != null) {
             if (currentView.title == getString(R.string.home)) {
                 binding.navigator.navigationHistory.isEnabled = true
@@ -2170,15 +2180,9 @@ class WebActivity : BaseActivity(), UIController, CallBack {
         }
     }
 
-    override fun deleteShortcut(shortcut: Shortcut) {
-        webViewModel.deleteShortcut(shortcut)
-    }
 
-    override fun onClickShortcut(shortcut: Shortcut) {
-        searchTheWeb(shortcut.url)
-    }
 
-    override fun addNewShortcut() {
+    private fun addNewShortcut() {
         val dialog = Dialog(this, R.style.MyDialog)
         val dialogBinding = DialogAddNewShortcutBinding.inflate(layoutInflater)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -2191,7 +2195,7 @@ class WebActivity : BaseActivity(), UIController, CallBack {
             var websiteUrl = dialogBinding.ctUrl.editText?.text.toString()
             if (websiteName != null) {
                 if (websiteName.isNotEmpty() && websiteUrl.isNotEmpty()) {
-                    if (!websiteUrl.contains("http")) {
+                    if (!websiteUrl.contains("https://") || !websiteUrl.contains("http://")) {
                         websiteUrl = "https://${websiteUrl}"
                     }
                     webViewModel.insertShortcut(
